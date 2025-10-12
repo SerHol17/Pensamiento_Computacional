@@ -16,14 +16,12 @@ chapters:
   - file: "Unidades/Unidad_1/VisualizacionDinamicaFoliumF"
   - file: "Unidades/Unidad_1/Automatizaciones"
   - file: "Unidades/Unidad_1/Ficheros"
-  
   #- file: "Unidades/Unidad_1/Tema 5 - Manejo de ficheros_10_08_2023"
   
   - file: "Unidades/Unidad_1/Tema 6 - Metodos Numericos_2024_01_1"
   - file: "Unidades/Unidad_1/Tema 7 - Metodos Numericos_2024_01_2"
   - file: "Unidades/Unidad_1/Tema 8 - Metodos Numericos_2024_01_3"
   - file: "Unidades/Unidad_1/Tema 9 - Metodos Numericos_2024_01_4"
-  - file: "Unidades/Unidad_1/RepasoUnidad"
   - file: "Unidades/Unidad_1/Evaluemos_Unidad1_10_08_2023"
  
 - file: Unidad2
@@ -45,19 +43,7 @@ chapters:
   - file: "Unidades/Unidad_4/Tarea 2"
 #  #- file: "Unidades/Unidad_4/Hilos2"
 #  #- file: "Unidades/Unidad_5/HilosPython2.0"
-- file: BigData.md
-  sections:
-  - file: "Unidades/UnidadBigData/MapReduce"
-  - file: "Unidades/UnidadBigData/spark_tutorial.ipynb"
-  - file: "Unidades/UnidadBigData/RDDs Spark.ipynb"
-  - file: "Unidades/UnidadBigData/SparkMongo.ipynb"
-  - file: "Unidades/UnidadBigData/SQLSpark.ipynb"
-  - file: "Unidades/UnidadBigData/Exploración y preparación de datos.ipynb"
-  - file: "Unidades/UnidadBigData/Integración de datos.ipynb"
-  - file: "Unidades/UnidadBigData/Relación entre base de datos.ipynb"
-- file: Unidad5
-  sections:
-  
+  - file: Unidad5
 
 ##  sections:
   - file: "Unidades/Unidad_5/SocketsBasicoPython"
