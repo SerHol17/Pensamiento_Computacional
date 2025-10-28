@@ -40,7 +40,6 @@ chapters:
   - file: Unidades/Unidad_4/HilosJavaBasico
   - file: Unidades/Unidad_4/Tarea 2
   - file: Unidad5
-  
   - file: Unidades/Unidad_5/SocketsBasicoPython
   - file: Unidades/Unidad_5/SocketsServerPython
   - file: Unidades/Unidad_5/SocketsClientePython
@@ -49,6 +48,7 @@ chapters:
   - file: Unidades/Unidad_5/GPTChatServer
   - file: Unidades/Unidad_5/GPTChatClient
   - file: "Unidades/Unidad_5/Tarea Unidad hilos y sockets"
+
 
 
 - file: BigData
@@ -62,4 +62,5 @@ chapters:
   - file: Unidades/UnidadBigData/Integración de datos
   - file: Unidades/UnidadBigData/Relación entre base de datos
 
+- file: Unidad6
 
