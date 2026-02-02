@@ -1,192 +1,93 @@
----
-title: Unidad 1
----
-# Unidad 1: Clusters en computación paralela/distribuida
+# Unidad 1: Introducción al Pensamiento Computacional
 
-## Contenido de la unidad
-
-<img src="_static/images/contenidoU1.png"/>
+El Pensamiento Computacional (PC) se define como una competencia esencial en la era digital que permite desarrollar habilidades para la resolución de problemas de manera estructurada y eficiente mediante la aplicación de modelos computacionales. No se trata simplemente de aprender a programar, sino de adquirir una metodología para abordar desafíos complejos en diversos sectores, especialmente en el ámbito empresarial y financiero.
 
 ---
 
-## Introducción al HPC
+## 1.1 ¿Qué es el Pensamiento Computacional?
 
-**HPC**: Cualquier  técnica computacional que soluciona un problema grande de forma más rápida que usando posiblemente sistemas simples.
+Es un proceso mental que facilita la comprensión de problemas para proponer soluciones óptimas que puedan ser ejecutadas por un sistema (humano o máquina). Esta asignatura proporciona las bases teóricas y prácticas necesarias para dominar esta competencia.
 
-HPC ha tenido gran impacto sobre todas las áreas de ciencias computacionales e ingeniería en la academia, gobierno e industria.
-
-Muchos problemas han sido solucionados con técnicas de **HPC** que eran imposibles de solucionar con estaciones de trabajo individuales o computadores personales.
-
-<img src="_static/images/U1_1.png"/>
-
----
-
-```{dropdown} Procesadores de alto rendimiento
-
-<img src="https://hardzone.es/app/uploads-hardzone.es/2023/02/Computacion-Alto-Rendimiento-HPC-Portada.jpg"/>
-
-```
-
-```{dropdown} Computación paralela
-
-Sistemas simples con varios procesadores trabajando sobre el mismo problema
-
-<img src="https://www.researchgate.net/publication/270881492/figure/fig1/AS:669030503428115@1536520710504/Programacion-Paralela-y-Distribuida.ppm" />
-
-#### Computación paralela Vs Computador paralelo
-
-- Computación Paralela: el uso de múltiples computadores o procesadores trabajando en conjunto sobre una tarea común 
-- Computador Paralelo: un computador que contiene múltiples procesadores:
-    * Cada procesador trabaja sobre una sección del problema
-    * Los procesadores permiten intercambio de información con otros procesadores
-
-<img srcr="https://camo.githubusercontent.com/265827bf0ab59a671404f5a215363de6626c1e3284ad435fbbdf9291746d8bea/687474703a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f662f66312f466f726b5f6a6f696e2e7376672f3130343070782d466f726b5f6a6f696e2e7376672e706e67"/>
+### Objetivos de la Unidad
+* Comprender los principios fundamentales del pensamiento computacional y su aplicación práctica.
+* Analizar problemas y estructuras de datos para proponer soluciones eficientes.
+* Fomentar la innovación y la eficiencia operativa en entornos digitales.
 
 
-<img src="_static/images/U1_14.png"/>
-
-<img src="_static/images/U1_15.png">
-```
-
-```{dropdown} Computación/programación Concurrente
-
-<img src="_static/images/U1_6.png"/>
-
-La programación concurrente se enfoca en manejar múltiples tareas al mismo tiempo (ya sea simultáneamente o dando la ilusión de simultaneidad), la programación paralela se enfoca en la división y ejecución simultánea de tareas para resolver un problema más grande en menos tiempo.
-
-
-```
-
-```{dropdown} Computación Distribuida
-
-Varios sistemas acoplados por un  secuenciador de trabajo sobre problemas relacionados
-
-<img src="_static/images/U1_12.png"/>
-
-### Sistemas distribuidos
-
-<img src="_static/images/U1_5.png"/>
-```
-
-```{dropdown} Computación grid
-
-<img src="_static/images/U1_3.png"/>
-
-Varios sistemas acoplados por software y redes para trabajar en conjunto en problemas simples o en problemas relacionados.
-
-Unión de Clusters de computadores, recursos computacionales, datos, grupos de investigación, científicos, etc., distribuidos geográficamente y conectados mediante redes WAN
-
-#### Funcionamiento de la computación grid
-Middleware para comunicación transparente y explotación de recursos.
-
-- El objetivo final es usar recursos remotos
-- Se requieren conexiones de redes rápidas
-- El grid busca el uso eficiente de los recursos
-- Es esencial la seguridad centrada en: políticas de acceso, autenticación y autorización.
-- Es importante estandarizar las aplicaciones grid.
-
-<img src="_static/images/U1_13.png"/>
-
-<img src="_static/images/U1_16.png"/>
-
-#### Arquitectura Grid
-
-* Capa de aplicación
-* Capa de middleware
-* Capa de recursos
-* Capa de red
-
-##### Middleware
-El auténtico cerebro del grid, se encarga de las siguientes funciones:
-
-* Encontrar lugar conveniente para ejecutar la tarea solicitada por el usuario.
-* Optimizar el uso de recursos que se encuentren dispersos.
-* Organizar el acceso eficiente a los datos.
-* Autenticar los diferentes elementos.
-* Ejecutar tareas.
-* Monitorizar el progreso de los trabajos en ejecución.
-* Gestionar automáticamente la recuperación frente a fallos.
-* Notificar el fallo, culminación de la ejecución de una tarea y sus resultados.
-
-<img src="_static/images/U1_17.png"/>
-
-```
-
----
-## ¿Dónde corre lo que se va a programar en el curso?
-### Infraestructura: Cluster
-
-<img src="_static/images/U1_2.png"/>
-
-### Colas y calendarizadores
-
-<img src="_static/images/U1_20.png"/>
-
-* Administrar recursos del Clúster
-* Priorizar trabajos
-* Limitar capacidad de cómputo
-* Administrar usuarios
 
 ---
 
-<img src="_static/images/U1_21.png"/>
+## 1.2 Evolución Histórica: De la Lógica a la Alfabetización Digital
 
-<img src="_static/images/U1_22.png"/>
+El Pensamiento Computacional no es una invención reciente; es la culminación de siglos de avances en la lógica, las matemáticas y la resolución sistemática de problemas. Su evolución marca el paso de tareas puramente mecánicas a la capacidad de modelar la realidad mediante abstracciones.
 
-#### Algunos calendarizadores
+### Antecedentes: Los Algoritmos Pre-Computacionales
+El término "algoritmo" tiene su origen en el matemático persa **Al-Khwarizmi** (siglo IX), quien estableció reglas paso a paso para realizar operaciones aritméticas. Esta noción de procedimientos finitos y ordenados constituye la base de cualquier proceso computacional moderno.
 
-<img src="_static/images/U1_23.png"/>
+### El Siglo XIX y la Primera Programadora
+* **Charles Babbage:** Diseñó la "Máquina Analítica", el primer concepto de un computador de propósito general con unidad de control y memoria.
+* **Ada Lovelace:** Fue la primera en comprender que la máquina de Babbage no solo podía procesar números, sino cualquier entidad representada mediante símbolos (música, lógica, texto). Escribió el primer algoritmo destinado a ser procesado por una máquina, convirtiéndose en la primera programadora y pionera en el concepto de **abstracción**.
 
----
-
-#### Flujo de trabajo con calendarizadores
-
-<img src="_static/images/U1_24.png"/>
-
----
-#### Así se ve un job para calendarizador
-
-<img src="_static/images/U1_25.png"/>
-
-### Infraestructura: Cloud
-
-<img src="_static/images/U1_4.png"/>
-
-- Externalizar TI a proveedores de servicio
-- Presentar transparencia al usuario final
-- Asignación dinámica de recursos bajo demanda (Sin compartir) – Pago asociado
-- Virtualización
-
-### Computación cloud
-
-<img src="_static/images/U1_18.png"/>
-
-### Infraestructura tradicional Vs Cloud
-
-<img src="_static/images/U1_19.png"/>
-
----
+<img src="_static\images\1Historia.png"/>
 
 
+### Alan Turing y la Máquina Universal (1936-1950)
+**Alan Turing** proporcionó el marco conceptual definitivo para el pensamiento computacional:
+* **La Máquina de Turing:** Un modelo matemático que demostró que una máquina simple puede ejecutar cualquier cálculo lógico si existe un algoritmo para ello. Esto definió los límites de lo que es "computable".
+* **Universalidad:** Turing propuso que el hardware es flexible; lo que define la tarea es el software (la lógica algorítmica). Esta idea es la que permite que una misma computadora hoy pueda gestionar una hoja de cálculo, analizar riesgos financieros o reproducir un video.
+* **Criptografía y Patrones:** Durante la Segunda Guerra Mundial, su trabajo descifrando los códigos de la máquina Enigma aplicó de forma masiva la **descomposición** de problemas complejos y el **reconocimiento de patrones**.
 
-## CPU & GPU & TPU
+### Grace Hopper y la Evolución del Lenguaje (1940-1960)
+**Grace Hopper** fue pionera en el desarrollo de compiladores. Su visión permitió que los humanos programaran utilizando términos cercanos al lenguaje natural (como en el lenguaje COBOL). Esto elevó el nivel de **abstracción**, permitiendo que profesionales de áreas administrativas y financieras pudieran interactuar con sistemas informáticos sin necesidad de conocer el complejo lenguaje binario de la máquina.
 
-<img src="_static/images/U1_7.png"/>
-<img src="_static/images/U1_9.png">
+<img src="_static\images\2historia.png"/>
+
+
+### Seymour Papert: "Pensar sobre el Pensamiento" (1980)
+En la década de los 80, **Seymour Papert** acuñó formalmente el término "Pensamiento Computacional" en su libro *Mindstorms*. A través del lenguaje de programación **Logo**, argumentó que el aprendizaje de la programación ayuda a las personas a desarrollar una mayor conciencia de sus propios procesos mentales. Para Papert, la computadora era un "instrumento para pensar" que permitía modelar ideas complejas.
+
+### Jeannette Wing y la Definición Moderna (2006)
+En 2006, **Jeannette Wing** publicó un artículo que transformó la percepción del PC. Ella defendió que el Pensamiento Computacional es una **habilidad fundamental** para todos, no exclusiva de los informáticos. Wing lo definió como el proceso de pensamiento implicado en la formulación de problemas y sus soluciones, de modo que las soluciones se representen de una forma que pueda ser ejecutada eficazmente por un agente de procesamiento de información.
+
+### El Pensamiento Computacional hoy
+En la era de la **Transformación Digital**, el PC se ha convertido en una alfabetización básica. Su evolución permite hoy:
+* **Big Data:** Analizar volúmenes masivos de datos financieros para encontrar patrones de consumo.
+* **Inteligencia Artificial:** Crear modelos que aprenden y toman decisiones optimizadas automáticamente.
+* **Automatización (RPA):** Diseñar algoritmos que ejecutan tareas administrativas repetitivas, liberando tiempo para la estrategia y la innovación.
+
+<img src="_static\images\3Historia.png"/>
 
 ---
 
-## CPU & GPU
+## 1.3 Los Pilares del Pensamiento Computacional
 
-<img src="_static/images/U1_8.png"/>
+El proceso se divide en cuatro metodologías clave que permiten descomponer la complejidad:
+
+### A. Descomposición
+Consiste en romper un problema o sistema complejo en partes más pequeñas y manejables.
+* *Ejemplo financiero:* Desglosar el análisis de un estado de resultados en ingresos, costos fijos y variables.
+
+### B. Reconocimiento de Patrones
+Identificar similitudes o tendencias dentro de los problemas.
+* *Ejemplo financiero:* Detectar comportamientos estacionales en las ventas de una empresa.
+
+
+
+### C. Abstracción
+Filtrar la información irrelevante para centrarse únicamente en los detalles que importan para la solución.
+* *Ejemplo financiero:* Crear un modelo de proyección de flujo de caja ignorando variables que no impactan significativamente el resultado final.
+
+### D. Diseño de Algoritmos
+Creación de una serie de pasos ordenados para resolver el problema o automatizar una tarea.
+* *Ejemplo financiero:* Diseñar el flujo lógico para un sistema de aprobación automática de créditos.
 
 ---
 
-## Actualidad del software para Big Data
+## 1.4 Importancia y Usos en la Gestión
 
-<img src="_static/images/U1_10.png">
+El Pensamiento Computacional es clave para los profesionales modernos debido a su capacidad para:
+* **Automatización de procesos:** Optimizar tareas repetitivas en entornos financieros.
+* **Toma de decisiones:** Utilizar modelos computacionales para elegir la mejor opción basada en datos.
+* **Eficiencia operativa:** Reducir errores y tiempos de ejecución en la gestión empresarial.
 
----
-## Aplicaciones del HPC
-
-<img src="_static/images/U1_11.png"/>
+> **Resultado de Aprendizaje (RA1):** Al finalizar esta unidad, el estudiante analiza problemas y estructuras de datos utilizando principios del pensamiento computacional para proponer soluciones óptimas.
