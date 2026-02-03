@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unidad 1: Introducción al Pensamiento Computacional &#8212; Pensamiento computacional - 01 Ucaldas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Unidad1';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Pensamiento Computacional" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-light" alt="Pensamiento computacional - 01 Ucaldas - Home"/>
+    <script>document.write(`<img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-dark" alt="Pensamiento computacional - 01 Ucaldas - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pensamiento Computacional
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Unidad 1: Introducción al Pensamiento Computacional</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional/issues/new?title=Issue%20on%20page%20%2FUnidad1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Unidad1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unidad 1: Introducción al Pensamiento Computacional</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Unidad 1: Introducción al Pensamiento Computacional</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-el-pensamiento-computacional">1.1 ¿Qué es el Pensamiento Computacional?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-la-unidad">Objetivos de la Unidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-historica-de-la-logica-a-la-alfabetizacion-digital">1.2 Evolución Histórica: De la Lógica a la Alfabetización Digital</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antecedentes-los-algoritmos-pre-computacionales">Antecedentes: Los Algoritmos Pre-Computacionales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-siglo-xix-y-la-primera-programadora">El Siglo XIX y la Primera Programadora</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alan-turing-y-la-maquina-universal-1936-1950">Alan Turing y la Máquina Universal (1936-1950)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grace-hopper-y-la-evolucion-del-lenguaje-1940-1960">Grace Hopper y la Evolución del Lenguaje (1940-1960)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seymour-papert-pensar-sobre-el-pensamiento-1980">Seymour Papert: «Pensar sobre el Pensamiento» (1980)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jeannette-wing-y-la-definicion-moderna-2006">Jeannette Wing y la Definición Moderna (2006)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-pensamiento-computacional-hoy">El Pensamiento Computacional hoy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-pilares-del-pensamiento-computacional">1.3 Los Pilares del Pensamiento Computacional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-decomposition">1. Descomposición (Decomposition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconocimiento-de-patrones-pattern-recognition">2. Reconocimiento de Patrones (Pattern Recognition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraccion-abstraction">3. Abstracción (Abstraction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-de-algoritmos-algorithmic-design">4. Diseño de Algoritmos (Algorithmic Design)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conectando-los-pilares">Conectando los Pilares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-aplicados-a-la-gestion-financiera">1.3.1 Ejemplos Aplicados a la Gestión Financiera</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-ejemplo-de-descomposicion-auditoria-de-gastos-operativos">A. Ejemplo de Descomposición: Auditoría de Gastos Operativos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ejemplo-de-reconocimiento-de-patrones-prediccion-de-flujo-de-caja">B. Ejemplo de Reconocimiento de Patrones: Predicción de Flujo de Caja</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-ejemplo-de-abstraccion-el-dashboard-gerencial">C. Ejemplo de Abstracción: El «Dashboard» Gerencial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-ejemplo-de-diseno-de-algoritmos-politica-de-cobro-de-cartera">D. Ejemplo de Diseño de Algoritmos: Política de Cobro de Cartera</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-la-metodologia">Resumen de la Metodología</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-del-pensamiento-computacional-en-la-gestion">1.4 Aplicaciones del Pensamiento Computacional en la Gestión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-modelos-computacionales-en-la-toma-de-decisiones">A. Modelos Computacionales en la Toma de Decisiones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-automatizacion-de-procesos-en-entornos-financieros">B. Automatización de Procesos en Entornos Financieros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-analisis-de-datos-en-la-gestion-empresarial">C. Análisis de Datos en la Gestión Empresarial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-optimizacion-y-eficiencia-operativa">D. Optimización y Eficiencia Operativa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-beneficios">Resumen de Beneficios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-por-bloques-la-implementacion-visual-de-la-logica">1.5 Programación por Bloques: La Implementación Visual de la Lógica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-y-como-funciona">1.5.1 ¿Qué es y cómo funciona?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-con-los-pilares-del-pensamiento-computacional">1.5.2 Relación con los Pilares del Pensamiento Computacional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ventajas-en-el-entorno-empresarial-y-financiero">1.5.3 Ventajas en el Entorno Empresarial y Financiero</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-low-code-para-administradores">1.5.4 Herramientas de «Low-Code» para Administradores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#video-repaso-unidad-1">Video Repaso Unidad 1</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="unidad-1-introduccion-al-pensamiento-computacional">
+<h1>Unidad 1: Introducción al Pensamiento Computacional<a class="headerlink" href="#unidad-1-introduccion-al-pensamiento-computacional" title="Link to this heading">#</a></h1>
+<p>El Pensamiento Computacional (PC) se define como una competencia esencial en la era digital que permite desarrollar habilidades para la resolución de problemas de manera estructurada y eficiente mediante la aplicación de modelos computacionales. No se trata simplemente de aprender a programar, sino de adquirir una metodología para abordar desafíos complejos en diversos sectores, especialmente en el ámbito empresarial y financiero.</p>
+<hr class="docutils" />
+<section id="que-es-el-pensamiento-computacional">
+<h2>1.1 ¿Qué es el Pensamiento Computacional?<a class="headerlink" href="#que-es-el-pensamiento-computacional" title="Link to this heading">#</a></h2>
+<p>Es un proceso mental que facilita la comprensión de problemas para proponer soluciones óptimas que puedan ser ejecutadas por un sistema (humano o máquina). Esta asignatura proporciona las bases teóricas y prácticas necesarias para dominar esta competencia.</p>
+<section id="objetivos-de-la-unidad">
+<h3>Objetivos de la Unidad<a class="headerlink" href="#objetivos-de-la-unidad" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Comprender los principios fundamentales del pensamiento computacional y su aplicación práctica.</p></li>
+<li><p>Analizar problemas y estructuras de datos para proponer soluciones eficientes.</p></li>
+<li><p>Fomentar la innovación y la eficiencia operativa en entornos digitales.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="evolucion-historica-de-la-logica-a-la-alfabetizacion-digital">
+<h2>1.2 Evolución Histórica: De la Lógica a la Alfabetización Digital<a class="headerlink" href="#evolucion-historica-de-la-logica-a-la-alfabetizacion-digital" title="Link to this heading">#</a></h2>
+<p>El Pensamiento Computacional no es una invención reciente; es la culminación de siglos de avances en la lógica, las matemáticas y la resolución sistemática de problemas. Su evolución marca el paso de tareas puramente mecánicas a la capacidad de modelar la realidad mediante abstracciones.</p>
+<section id="antecedentes-los-algoritmos-pre-computacionales">
+<h3>Antecedentes: Los Algoritmos Pre-Computacionales<a class="headerlink" href="#antecedentes-los-algoritmos-pre-computacionales" title="Link to this heading">#</a></h3>
+<p>El término «algoritmo» tiene su origen en el matemático persa <strong>Al-Khwarizmi</strong> (siglo IX), quien estableció reglas paso a paso para realizar operaciones aritméticas. Esta noción de procedimientos finitos y ordenados constituye la base de cualquier proceso computacional moderno.</p>
+</section>
+<section id="el-siglo-xix-y-la-primera-programadora">
+<h3>El Siglo XIX y la Primera Programadora<a class="headerlink" href="#el-siglo-xix-y-la-primera-programadora" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Charles Babbage:</strong> Diseñó la «Máquina Analítica», el primer concepto de un computador de propósito general con unidad de control y memoria.</p></li>
+<li><p><strong>Ada Lovelace:</strong> Fue la primera en comprender que la máquina de Babbage no solo podía procesar números, sino cualquier entidad representada mediante símbolos (música, lógica, texto). Escribió el primer algoritmo destinado a ser procesado por una máquina, convirtiéndose en la primera programadora y pionera en el concepto de <strong>abstracción</strong>.</p></li>
+</ul>
+<img src="_static\images\1Historia.png"/>
+</section>
+<section id="alan-turing-y-la-maquina-universal-1936-1950">
+<h3>Alan Turing y la Máquina Universal (1936-1950)<a class="headerlink" href="#alan-turing-y-la-maquina-universal-1936-1950" title="Link to this heading">#</a></h3>
+<p><strong>Alan Turing</strong> proporcionó el marco conceptual definitivo para el pensamiento computacional:</p>
+<ul class="simple">
+<li><p><strong>La Máquina de Turing:</strong> Un modelo matemático que demostró que una máquina simple puede ejecutar cualquier cálculo lógico si existe un algoritmo para ello. Esto definió los límites de lo que es «computable».</p></li>
+<li><p><strong>Universalidad:</strong> Turing propuso que el hardware es flexible; lo que define la tarea es el software (la lógica algorítmica). Esta idea es la que permite que una misma computadora hoy pueda gestionar una hoja de cálculo, analizar riesgos financieros o reproducir un video.</p></li>
+<li><p><strong>Criptografía y Patrones:</strong> Durante la Segunda Guerra Mundial, su trabajo descifrando los códigos de la máquina Enigma aplicó de forma masiva la <strong>descomposición</strong> de problemas complejos y el <strong>reconocimiento de patrones</strong>.</p></li>
+</ul>
+</section>
+<section id="grace-hopper-y-la-evolucion-del-lenguaje-1940-1960">
+<h3>Grace Hopper y la Evolución del Lenguaje (1940-1960)<a class="headerlink" href="#grace-hopper-y-la-evolucion-del-lenguaje-1940-1960" title="Link to this heading">#</a></h3>
+<p><strong>Grace Hopper</strong> fue pionera en el desarrollo de compiladores. Su visión permitió que los humanos programaran utilizando términos cercanos al lenguaje natural (como en el lenguaje COBOL). Esto elevó el nivel de <strong>abstracción</strong>, permitiendo que profesionales de áreas administrativas y financieras pudieran interactuar con sistemas informáticos sin necesidad de conocer el complejo lenguaje binario de la máquina.</p>
+<img src="_static\images\2historia.png"/>
+</section>
+<section id="seymour-papert-pensar-sobre-el-pensamiento-1980">
+<h3>Seymour Papert: «Pensar sobre el Pensamiento» (1980)<a class="headerlink" href="#seymour-papert-pensar-sobre-el-pensamiento-1980" title="Link to this heading">#</a></h3>
+<p>En la década de los 80, <strong>Seymour Papert</strong> acuñó formalmente el término «Pensamiento Computacional» en su libro <em>Mindstorms</em>. A través del lenguaje de programación <strong>Logo</strong>, argumentó que el aprendizaje de la programación ayuda a las personas a desarrollar una mayor conciencia de sus propios procesos mentales. Para Papert, la computadora era un «instrumento para pensar» que permitía modelar ideas complejas.</p>
+</section>
+<section id="jeannette-wing-y-la-definicion-moderna-2006">
+<h3>Jeannette Wing y la Definición Moderna (2006)<a class="headerlink" href="#jeannette-wing-y-la-definicion-moderna-2006" title="Link to this heading">#</a></h3>
+<p>En 2006, <strong>Jeannette Wing</strong> publicó un artículo que transformó la percepción del PC. Ella defendió que el Pensamiento Computacional es una <strong>habilidad fundamental</strong> para todos, no exclusiva de los informáticos. Wing lo definió como el proceso de pensamiento implicado en la formulación de problemas y sus soluciones, de modo que las soluciones se representen de una forma que pueda ser ejecutada eficazmente por un agente de procesamiento de información.</p>
+</section>
+<section id="el-pensamiento-computacional-hoy">
+<h3>El Pensamiento Computacional hoy<a class="headerlink" href="#el-pensamiento-computacional-hoy" title="Link to this heading">#</a></h3>
+<p>En la era de la <strong>Transformación Digital</strong>, el PC se ha convertido en una alfabetización básica. Su evolución permite hoy:</p>
+<ul class="simple">
+<li><p><strong>Big Data:</strong> Analizar volúmenes masivos de datos financieros para encontrar patrones de consumo.</p></li>
+<li><p><strong>Inteligencia Artificial:</strong> Crear modelos que aprenden y toman decisiones optimizadas automáticamente.</p></li>
+<li><p><strong>Automatización (RPA):</strong> Diseñar algoritmos que ejecutan tareas administrativas repetitivas, liberando tiempo para la estrategia y la innovación.</p></li>
+</ul>
+<img src="_static\images\3Historia.png"/>
+</section>
+</section>
+<hr class="docutils" />
+<section id="los-pilares-del-pensamiento-computacional">
+<h2>1.3 Los Pilares del Pensamiento Computacional<a class="headerlink" href="#los-pilares-del-pensamiento-computacional" title="Link to this heading">#</a></h2>
+<p>Para resolver problemas complejos en el ámbito de la administración y las finanzas, el Pensamiento Computacional se descompone en cuatro procesos mentales o «pilares». Estas estrategias permiten transformar un desafío caótico en una solución estructurada y ejecutable.</p>
+<hr class="docutils" />
+<section id="descomposicion-decomposition">
+<h3>1. Descomposición (Decomposition)<a class="headerlink" href="#descomposicion-decomposition" title="Link to this heading">#</a></h3>
+<p>Es el proceso de romper un problema, dato o proceso complejo en partes más pequeñas y fáciles de manejar. Al abordar cada pieza individualmente, la carga cognitiva disminuye y la precisión aumenta.</p>
+<ul class="simple">
+<li><p><strong>Enfoque Técnico:</strong> Identificar los sub-componentes lógicos de un sistema.</p></li>
+<li><p><strong>Ejemplo en Finanzas:</strong> Al realizar una auditoría completa de una empresa, no se analiza «la empresa» como un todo, sino que se descompone en activos, pasivos, flujos de caja por departamentos, cuentas por cobrar y obligaciones tributarias.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="reconocimiento-de-patrones-pattern-recognition">
+<h3>2. Reconocimiento de Patrones (Pattern Recognition)<a class="headerlink" href="#reconocimiento-de-patrones-pattern-recognition" title="Link to this heading">#</a></h3>
+<p>Consiste en buscar similitudes o características comunes entre los problemas descompuestos o con experiencias previas. Identificar qué aspectos se repiten permite predecir comportamientos y reutilizar soluciones.</p>
+<ul class="simple">
+<li><p><strong>Enfoque Técnico:</strong> Observar tendencias, regularidades y frecuencias en los datos.</p></li>
+<li><p><strong>Ejemplo en Finanzas:</strong> Un analista de riesgos observa que la tasa de impago de préstamos aumenta sistemáticamente cuando la tasa de interés sube un 2% en un trimestre. Identificar este patrón permite crear alertas tempranas.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="abstraccion-abstraction">
+<h3>3. Abstracción (Abstraction)<a class="headerlink" href="#abstraccion-abstraction" title="Link to this heading">#</a></h3>
+<p>Es la capacidad de filtrar la información irrelevante y quedarse únicamente con los detalles esenciales que definen el problema. Se trata de crear un «modelo» simplificado de la realidad.</p>
+<ul class="simple">
+<li><p><strong>Enfoque Técnico:</strong> Eliminar el ruido y las variables secundarias para enfocarse en la estructura central.</p></li>
+<li><p><strong>Ejemplo en Finanzas:</strong> Al diseñar un simulador de proyecciones económicas, se abstraen detalles como el color del logo de la empresa o el nombre de los empleados, enfocándose exclusivamente en variables críticas como el PIB, la inflación y el margen operativo.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="diseno-de-algoritmos-algorithmic-design">
+<h3>4. Diseño de Algoritmos (Algorithmic Design)<a class="headerlink" href="#diseno-de-algoritmos-algorithmic-design" title="Link to this heading">#</a></h3>
+<p>Es el paso final donde se desarrolla una serie de instrucciones paso a paso, claras y ordenadas, para resolver el problema o realizar una tarea de forma automática. Un buen algoritmo debe ser preciso, finito y eficiente.</p>
+<ul class="simple">
+<li><p><strong>Enfoque Técnico:</strong> Creación de flujos lógicos, pseudocódigo o diagramas de flujo.</p></li>
+<li><p><strong>Ejemplo en Finanzas:</strong> Diseñar el proceso automático para el pago a proveedores:</p>
+<ol class="arabic simple">
+<li><p>Recibir factura digital.</p></li>
+<li><p>Verificar contra orden de compra.</p></li>
+<li><p>Si coinciden, programar pago para la fecha de vencimiento.</p></li>
+<li><p>Si no coinciden, enviar alerta al departamento de compras.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="conectando-los-pilares">
+<h3>Conectando los Pilares<a class="headerlink" href="#conectando-los-pilares" title="Link to this heading">#</a></h3>
+<p>Estos cuatro pilares no funcionan de forma aislada. La <strong>descomposición</strong> nos da las piezas, el <strong>reconocimiento de patrones</strong> nos dice cómo se han comportado antes, la <strong>abstracción</strong> nos ayuda a ignorar lo que no importa, y el <strong>diseño de algoritmos</strong> construye el camino hacia la solución final.</p>
+<p>Dominar estos pilares es lo que permite pasar de un análisis manual lento a una <strong>automatización de procesos</strong> escalable en cualquier entorno empresarial.</p>
+<img src="_static\images\1pilares.png"/>
+---
+</section>
+<section id="ejemplos-aplicados-a-la-gestion-financiera">
+<h3>1.3.1 Ejemplos Aplicados a la Gestión Financiera<a class="headerlink" href="#ejemplos-aplicados-a-la-gestion-financiera" title="Link to this heading">#</a></h3>
+<p>Para comprender mejor cómo operan estos pilares en la vida real de un administrador, veamos los siguientes escenarios:</p>
+<hr class="docutils" />
+<section id="a-ejemplo-de-descomposicion-auditoria-de-gastos-operativos">
+<h4>A. Ejemplo de Descomposición: Auditoría de Gastos Operativos<a class="headerlink" href="#a-ejemplo-de-descomposicion-auditoria-de-gastos-operativos" title="Link to this heading">#</a></h4>
+<p>Imagina que la gerencia te pide reducir los costos operativos de la empresa en un 15%. Un problema de esta magnitud es abrumador si se ve como un todo.</p>
+<ul class="simple">
+<li><p><strong>Problema complejo:</strong> Reducir costos globales.</p></li>
+<li><p><strong>Descomposición:</strong></p>
+<ol class="arabic simple">
+<li><p>Analizar gastos de nómina y beneficios.</p></li>
+<li><p>Revisar contratos con proveedores de servicios públicos.</p></li>
+<li><p>Evaluar costos de logística y distribución.</p></li>
+<li><p>Auditar gastos de papelería y suministros de oficina.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="b-ejemplo-de-reconocimiento-de-patrones-prediccion-de-flujo-de-caja">
+<h4>B. Ejemplo de Reconocimiento de Patrones: Predicción de Flujo de Caja<a class="headerlink" href="#b-ejemplo-de-reconocimiento-de-patrones-prediccion-de-flujo-de-caja" title="Link to this heading">#</a></h4>
+<p>Un administrador financiero debe saber cuándo la empresa se quedará sin liquidez. Al observar los datos históricos de los últimos 5 años, notas lo siguiente:</p>
+<ul class="simple">
+<li><p><strong>Patrón detectado:</strong> Cada año, en el mes de marzo, los gastos aumentan debido al pago de impuestos de industria y comercio, mientras que las ventas bajan después de la temporada de inicio de año.</p></li>
+<li><p><strong>Utilidad:</strong> Este patrón permite anticipar la necesidad de una línea de crédito revolvente solo para ese mes, evitando crisis de efectivo.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="c-ejemplo-de-abstraccion-el-dashboard-gerencial">
+<h4>C. Ejemplo de Abstracción: El «Dashboard» Gerencial<a class="headerlink" href="#c-ejemplo-de-abstraccion-el-dashboard-gerencial" title="Link to this heading">#</a></h4>
+<p>Cuando presentas resultados a una junta directiva, no les entregas el libro contable con miles de transacciones individuales.</p>
+<ul class="simple">
+<li><p><strong>Proceso de abstracción:</strong> Eliminas el detalle de cada factura, cada nombre de proveedor y cada fecha exacta.</p></li>
+<li><p><strong>Modelo abstracto:</strong> Te centras únicamente en 3 indicadores clave (KPIs): Margen Ebitda, Ratio de Liquidez y Retorno sobre la Inversión (ROI). La «abstracción» es el modelo que resume la salud financiera sin el ruido de los datos transaccionales.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="d-ejemplo-de-diseno-de-algoritmos-politica-de-cobro-de-cartera">
+<h4>D. Ejemplo de Diseño de Algoritmos: Política de Cobro de Cartera<a class="headerlink" href="#d-ejemplo-de-diseno-de-algoritmos-politica-de-cobro-de-cartera" title="Link to this heading">#</a></h4>
+<p>Para que el departamento de cobranza funcione solo, diseñas un conjunto de reglas lógicas (un algoritmo):</p>
+<ol class="arabic simple">
+<li><p><strong>Si</strong> la factura tiene 1-30 días de vencida: Enviar recordatorio amistoso por correo.</p></li>
+<li><p><strong>Si</strong> la factura tiene 31-60 días: Realizar llamada telefónica de seguimiento.</p></li>
+<li><p><strong>Si</strong> el monto es mayor a $10.000 y tiene &gt;60 días: Bloquear nuevos pedidos del cliente y pasar a cobro jurídico.</p></li>
+<li><p><strong>Si no:</strong> Continuar con gestión administrativa.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resumen-de-la-metodologia">
+<h3>Resumen de la Metodología<a class="headerlink" href="#resumen-de-la-metodologia" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Pilar</p></th>
+<th class="head text-left"><p>Acción en Finanzas</p></th>
+<th class="head text-left"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Descomposición</strong></p></td>
+<td class="text-left"><p>Dividir el presupuesto en centros de costos.</p></td>
+<td class="text-left"><p>Claridad operativa.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Patrones</strong></p></td>
+<td class="text-left"><p>Identificar ciclos de ventas o morosidad.</p></td>
+<td class="text-left"><p>Capacidad predictiva.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Abstracción</strong></p></td>
+<td class="text-left"><p>Crear indicadores financieros (Ratios).</p></td>
+<td class="text-left"><p>Toma de decisiones rápida.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Algoritmos</strong></p></td>
+<td class="text-left"><p>Crear manuales de procedimientos contables.</p></td>
+<td class="text-left"><p>Automatización y control.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="aplicaciones-del-pensamiento-computacional-en-la-gestion">
+<h2>1.4 Aplicaciones del Pensamiento Computacional en la Gestión<a class="headerlink" href="#aplicaciones-del-pensamiento-computacional-en-la-gestion" title="Link to this heading">#</a></h2>
+<p>El pensamiento computacional es el motor que impulsa la transformación digital en las organizaciones modernas. Su aplicación permite transitar de una gestión operativa manual hacia una gestión estratégica automatizada y basada en evidencia.</p>
+<hr class="docutils" />
+<section id="a-modelos-computacionales-en-la-toma-de-decisiones">
+<h3>A. Modelos Computacionales en la Toma de Decisiones<a class="headerlink" href="#a-modelos-computacionales-en-la-toma-de-decisiones" title="Link to this heading">#</a></h3>
+<p>La toma de decisiones en la administración moderna se apoya en modelos que permiten simular escenarios complejos antes de ejecutar inversiones o cambios estructurales.</p>
+<ul class="simple">
+<li><p><strong>Simulación de Escenarios:</strong> Uso de algoritmos para proyectar el comportamiento del flujo de caja bajo distintas variables macroeconómicas (inflación, tasas de interés).</p></li>
+<li><p><strong>Evaluación de Riesgos:</strong> Implementación de modelos probabilísticos para determinar la viabilidad de nuevos proyectos de inversión.</p></li>
+<li><p><strong>Impacto:</strong> Se reduce la incertidumbre y se optimiza la asignación de capital basándose en datos objetivos.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="b-automatizacion-de-procesos-en-entornos-financieros">
+<h3>B. Automatización de Procesos en Entornos Financieros<a class="headerlink" href="#b-automatizacion-de-procesos-en-entornos-financieros" title="Link to this heading">#</a></h3>
+<p>La automatización no busca reemplazar al administrador, sino liberarlo de tareas repetitivas para que pueda enfocarse en el análisis y la estrategia.</p>
+<ul class="simple">
+<li><p><strong>Conciliación Automática:</strong> Algoritmos que comparan registros contables con extractos bancarios, identificando discrepancias de forma instantánea.</p></li>
+<li><p><strong>Gestión de Nómina y Pagos:</strong> Programación de flujos lógicos que ejecutan pagos a proveedores y empleados cumpliendo criterios de fechas y montos preestablecidos.</p></li>
+<li><p><strong>Impacto:</strong> Eliminación casi total del error humano y mejora drástica en la velocidad de procesamiento de información.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="c-analisis-de-datos-en-la-gestion-empresarial">
+<h3>C. Análisis de Datos en la Gestión Empresarial<a class="headerlink" href="#c-analisis-de-datos-en-la-gestion-empresarial" title="Link to this heading">#</a></h3>
+<p>El pensamiento computacional permite estructurar grandes volúmenes de información para encontrar oportunidades de negocio que no son visibles a simple vista.</p>
+<ul class="simple">
+<li><p><strong>Segmentación de Clientes:</strong> Uso de patrones para agrupar clientes según su comportamiento de pago o capacidad de endeudamiento.</p></li>
+<li><p><strong>Detección de Fraudes:</strong> Algoritmos que identifican anomalías en las transacciones financieras en tiempo real, emitiendo alertas preventivas.</p></li>
+<li><p><strong>Impacto:</strong> Permite una personalización masiva de productos financieros y una mayor seguridad en las operaciones.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="d-optimizacion-y-eficiencia-operativa">
+<h3>D. Optimización y Eficiencia Operativa<a class="headerlink" href="#d-optimizacion-y-eficiencia-operativa" title="Link to this heading">#</a></h3>
+<p>La eficiencia operativa se logra cuando los procesos se diseñan para consumir la menor cantidad de recursos posibles manteniendo la calidad del resultado.</p>
+<ul class="simple">
+<li><p><strong>Optimización de Inventarios:</strong> Algoritmos que calculan el momento exacto y la cantidad precisa de pedido para minimizar costos de almacenamiento.</p></li>
+<li><p><strong>Rutas de Distribución:</strong> Diseño de secuencias lógicas para mejorar la logística de entrega, reduciendo costos de transporte.</p></li>
+<li><p><strong>Impacto:</strong> Mejora directa en los márgenes de utilidad y fortalecimiento de la competitividad de la empresa.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="resumen-de-beneficios">
+<h3>Resumen de Beneficios<a class="headerlink" href="#resumen-de-beneficios" title="Link to this heading">#</a></h3>
+<p>La integración de estas metodologías en la práctica profesional de un administrador financiero genera tres resultados clave:</p>
+<ol class="arabic simple">
+<li><p><strong>Eficiencia:</strong> Hacer más con menos recursos y en menos tiempo.</p></li>
+<li><p><strong>Precisión:</strong> Datos confiables para reportes financieros exactos.</p></li>
+<li><p><strong>Innovación:</strong> Capacidad de crear nuevas soluciones digitales para problemas tradicionales del sector.</p></li>
+</ol>
+<blockquote>
+<div><p>El conocimiento adquirido en esta área permite a los futuros profesionales aplicar metodologías computacionales en la resolución de problemas complejos, mejorando la eficiencia operativa y promoviendo la innovación en sus áreas de trabajo.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="programacion-por-bloques-la-implementacion-visual-de-la-logica">
+<h2>1.5 Programación por Bloques: La Implementación Visual de la Lógica<a class="headerlink" href="#programacion-por-bloques-la-implementacion-visual-de-la-logica" title="Link to this heading">#</a></h2>
+<p>La programación por bloques es un paradigma que permite crear programas manipulando elementos gráficos de manera visual, en lugar de escribir código basado en texto. Para un estudiante de <strong>Administración Financiera</strong>, esta metodología representa la forma más rápida de convertir la teoría del pensamiento computacional en soluciones automáticas reales.</p>
+<section id="que-es-y-como-funciona">
+<h3>1.5.1 ¿Qué es y cómo funciona?<a class="headerlink" href="#que-es-y-como-funciona" title="Link to this heading">#</a></h3>
+<p>En lugar de memorizar sintaxis compleja (como puntos y comas o paréntesis), el usuario arrastra y suelta «bloques» que encajan entre sí como piezas de un rompecabezas. Cada bloque contiene una instrucción lógica predefinida. Si dos piezas no encajan lógicamente, el sistema impide la conexión, lo que reduce drásticamente los errores.</p>
+</section>
+<section id="relacion-con-los-pilares-del-pensamiento-computacional">
+<h3>1.5.2 Relación con los Pilares del Pensamiento Computacional<a class="headerlink" href="#relacion-con-los-pilares-del-pensamiento-computacional" title="Link to this heading">#</a></h3>
+<p>La programación por bloques es el laboratorio perfecto para aplicar los pilares vistos anteriormente:</p>
+<ul class="simple">
+<li><p><strong>Descomposición:</strong> Para construir un programa, el administrador debe dividir la tarea en bloques de acciones individuales (ej. «Abrir Excel», «Sumar Columna», «Enviar Correo»).</p></li>
+<li><p><strong>Abstracción:</strong> Los bloques ocultan la complejidad técnica del código subyacente. El usuario no necesita saber cómo la computadora gestiona la memoria, solo necesita saber que el bloque «Calcular Interés» realiza la función deseada.</p></li>
+<li><p><strong>Reconocimiento de Patrones:</strong> Facilita la creación de procesos repetitivos mediante bloques de «Bucle» (Loops) y la toma de decisiones mediante bloques «Condicionales» (If-Then-Else).</p></li>
+<li><p><strong>Diseño de Algoritmos:</strong> El ensamblaje final de los bloques constituye el algoritmo que resuelve el problema financiero.</p></li>
+</ul>
+</section>
+<section id="ventajas-en-el-entorno-empresarial-y-financiero">
+<h3>1.5.3 Ventajas en el Entorno Empresarial y Financiero<a class="headerlink" href="#ventajas-en-el-entorno-empresarial-y-financiero" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Reducción de la Brecha Técnica:</strong> Permite que profesionales no programadores diseñen flujos de trabajo complejos.</p></li>
+<li><p><strong>Automatización de Procesos (RPA):</strong> Es la base de las herramientas modernas que eliminan tareas repetitivas en contabilidad y finanzas.</p></li>
+<li><p><strong>Prototipado Ágil:</strong> Permite crear y probar una idea de automatización en minutos antes de realizar una inversión tecnológica mayor.</p></li>
+</ol>
+</section>
+<section id="herramientas-de-low-code-para-administradores">
+<h3>1.5.4 Herramientas de «Low-Code» para Administradores<a class="headerlink" href="#herramientas-de-low-code-para-administradores" title="Link to this heading">#</a></h3>
+<p>Aunque herramientas como <strong>Scratch</strong> son ideales para aprender la lógica básica, en el mundo profesional se utilizan plataformas de «nodos» y «bloques» más avanzadas:</p>
+<ul class="simple">
+<li><p><strong>n8n / Zapier:</strong> Utilizan una interfaz visual para conectar aplicaciones (ej. conectar una base de datos de Postgres con un reporte en Google Sheets).</p></li>
+<li><p><strong>Microsoft Power Automate:</strong> Herramienta líder para automatizar tareas dentro de Office 365, como el procesamiento automático de facturas recibidas por correo.</p></li>
+<li><p><strong>Blockly:</strong> Una biblioteca de Google que permite integrar la programación visual en diversas aplicaciones web.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Conclusión de la Unidad 1:</strong>
+El pensamiento computacional, apoyado en herramientas visuales como la programación por bloques, transforma al administrador en un arquitecto de procesos. Esta unidad proporciona la base mental; en la siguiente unidad, profundizaremos en cómo diseñar algoritmos de manera formal para garantizar la <strong>eficiencia operativa</strong> y la <strong>toma de decisiones</strong> basada en datos.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="video-repaso-unidad-1">
+<h1>Video Repaso Unidad 1<a class="headerlink" href="#video-repaso-unidad-1" title="Link to this heading">#</a></h1>
+<p>Para consolidar los conceptos de pensamiento computacional, pilares y su evolución histórica, visualiza el siguiente recurso:</p>
+<iframe src="https://drive.google.com/file/d/1MIlfYwNKn3O2axUtIwgmhp57gu9O11kB/preview" width="100%" height="480" allow="autoplay"></iframe>
+<hr class="docutils" />
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Pensamiento Computacional</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Unidad 1: Introducción al Pensamiento Computacional</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-el-pensamiento-computacional">1.1 ¿Qué es el Pensamiento Computacional?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-la-unidad">Objetivos de la Unidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-historica-de-la-logica-a-la-alfabetizacion-digital">1.2 Evolución Histórica: De la Lógica a la Alfabetización Digital</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antecedentes-los-algoritmos-pre-computacionales">Antecedentes: Los Algoritmos Pre-Computacionales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-siglo-xix-y-la-primera-programadora">El Siglo XIX y la Primera Programadora</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alan-turing-y-la-maquina-universal-1936-1950">Alan Turing y la Máquina Universal (1936-1950)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grace-hopper-y-la-evolucion-del-lenguaje-1940-1960">Grace Hopper y la Evolución del Lenguaje (1940-1960)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seymour-papert-pensar-sobre-el-pensamiento-1980">Seymour Papert: «Pensar sobre el Pensamiento» (1980)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jeannette-wing-y-la-definicion-moderna-2006">Jeannette Wing y la Definición Moderna (2006)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-pensamiento-computacional-hoy">El Pensamiento Computacional hoy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-pilares-del-pensamiento-computacional">1.3 Los Pilares del Pensamiento Computacional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-decomposition">1. Descomposición (Decomposition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconocimiento-de-patrones-pattern-recognition">2. Reconocimiento de Patrones (Pattern Recognition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraccion-abstraction">3. Abstracción (Abstraction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-de-algoritmos-algorithmic-design">4. Diseño de Algoritmos (Algorithmic Design)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conectando-los-pilares">Conectando los Pilares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-aplicados-a-la-gestion-financiera">1.3.1 Ejemplos Aplicados a la Gestión Financiera</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-ejemplo-de-descomposicion-auditoria-de-gastos-operativos">A. Ejemplo de Descomposición: Auditoría de Gastos Operativos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-ejemplo-de-reconocimiento-de-patrones-prediccion-de-flujo-de-caja">B. Ejemplo de Reconocimiento de Patrones: Predicción de Flujo de Caja</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-ejemplo-de-abstraccion-el-dashboard-gerencial">C. Ejemplo de Abstracción: El «Dashboard» Gerencial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-ejemplo-de-diseno-de-algoritmos-politica-de-cobro-de-cartera">D. Ejemplo de Diseño de Algoritmos: Política de Cobro de Cartera</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-la-metodologia">Resumen de la Metodología</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones-del-pensamiento-computacional-en-la-gestion">1.4 Aplicaciones del Pensamiento Computacional en la Gestión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-modelos-computacionales-en-la-toma-de-decisiones">A. Modelos Computacionales en la Toma de Decisiones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-automatizacion-de-procesos-en-entornos-financieros">B. Automatización de Procesos en Entornos Financieros</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-analisis-de-datos-en-la-gestion-empresarial">C. Análisis de Datos en la Gestión Empresarial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-optimizacion-y-eficiencia-operativa">D. Optimización y Eficiencia Operativa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-beneficios">Resumen de Beneficios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-por-bloques-la-implementacion-visual-de-la-logica">1.5 Programación por Bloques: La Implementación Visual de la Lógica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-y-como-funciona">1.5.1 ¿Qué es y cómo funciona?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-con-los-pilares-del-pensamiento-computacional">1.5.2 Relación con los Pilares del Pensamiento Computacional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ventajas-en-el-entorno-empresarial-y-financiero">1.5.3 Ventajas en el Entorno Empresarial y Financiero</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-low-code-para-administradores">1.5.4 Herramientas de «Low-Code» para Administradores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#video-repaso-unidad-1">Video Repaso Unidad 1</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Sergio Alejandro Holguin García
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
