@@ -25,9 +25,30 @@ El Pensamiento Computacional no es una invención reciente; es la culminación d
 El término "algoritmo" tiene su origen en el matemático persa **Al-Khwarizmi** (siglo IX), quien estableció reglas paso a paso para realizar operaciones aritméticas. Esta noción de procedimientos finitos y ordenados constituye la base de cualquier proceso computacional moderno.
 
 ### El Siglo XIX y la Primera Programadora
-* **Charles Babbage:** Diseñó la "Máquina Analítica", el primer concepto de un computador de propósito general con unidad de control y memoria.
-* **Ada Lovelace:** Fue la primera en comprender que la máquina de Babbage no solo podía procesar números, sino cualquier entidad representada mediante símbolos (música, lógica, texto). Escribió el primer algoritmo destinado a ser procesado por una máquina, convirtiéndose en la primera programadora y pionera en el concepto de **abstracción**.
 
+La transición del cálculo manual a la computación automática comenzó en la era victoriana, donde se sentaron las bases lógicas que permitirían la existencia de los computadores modernos un siglo después.
+
+#### Charles Babbage: El Padre de la Computación Mecánica
+Babbage, un matemático e ingeniero británico, fue el primero en concebir la idea de que una máquina podía realizar cálculos complejos sin error humano.
+
+* **La Máquina Analítica:** A diferencia de su invento anterior (la Máquina de Diferencias), la Máquina Analítica fue el primer diseño de un computador de propósito general. Incorporaba conceptos que hoy son fundamentales:
+    * **El "Molino" (The Mill):** Lo que hoy conocemos como la Unidad Central de Procesamiento (CPU).
+    * **El "Almacén" (The Store):** El equivalente a la memoria RAM y el disco duro.
+    * **Entrada y Salida:** Utilizaba tarjetas perforadas (tecnología inspirada en los telares de Jacquard) para ingresar datos e instrucciones.
+* **Visión de Programabilidad:** Babbage entendió que la máquina no estaba limitada a una sola tarea, sino que podía ser "reconfigurada" mediante las tarjetas para ejecutar distintas funciones lógicas.
+
+
+
+#### Ada Lovelace: La Pionera de la Abstracción y la Ciencia Poética
+Hija del poeta Lord Byron, Ada Lovelace combinó su formación matemática con una imaginación única, lo que ella llamaba "ciencia poética".
+
+* **Más allá de los números:** Mientras Babbage veía su máquina como una calculadora gigante, Lovelace tuvo una visión revolucionaria: comprendió que si la máquina podía manipular números, y esos números podían representar otras cosas (notas musicales, letras, lógica o gráficos), la máquina podría procesar cualquier entidad simbólica. Este es el nacimiento de la **abstracción computacional**.
+* **El Primer Algoritmo:** En 1843, al traducir las notas sobre la máquina de Babbage, Ada incluyó un anexo detallando un método para calcular los **Números de Bernoulli**. Este diagrama es reconocido hoy como el **primer programa de computador** de la historia, ya que describía una secuencia lógica de pasos destinados a ser ejecutados por una máquina.
+
+
+
+* **Concepto de Bucle y Subrutina:** En sus notas, Ada describió cómo la máquina podía repetir una serie de instrucciones (lo que hoy llamamos **bucles**) y cómo podía saltar a diferentes partes del programa, estableciendo las estructuras de control que usamos en la programación moderna.
+* **El Legado en la Gestión:** Para un administrador financiero, el aporte de Lovelace es crítico: ella demostró que la tecnología no es solo para "hacer cuentas", sino para modelar sistemas complejos de información, permitiendo que la lógica gobierne procesos automáticos.
 <img src="_static\images\1Historia.png"/>
 
 
@@ -38,8 +59,18 @@ El término "algoritmo" tiene su origen en el matemático persa **Al-Khwarizmi**
 * **Criptografía y Patrones:** Durante la Segunda Guerra Mundial, su trabajo descifrando los códigos de la máquina Enigma aplicó de forma masiva la **descomposición** de problemas complejos y el **reconocimiento de patrones**.
 
 ### Grace Hopper y la Evolución del Lenguaje (1940-1960)
-**Grace Hopper** fue pionera en el desarrollo de compiladores. Su visión permitió que los humanos programaran utilizando términos cercanos al lenguaje natural (como en el lenguaje COBOL). Esto elevó el nivel de **abstracción**, permitiendo que profesionales de áreas administrativas y financieras pudieran interactuar con sistemas informáticos sin necesidad de conocer el complejo lenguaje binario de la máquina.
 
+"Es mejor pedir perdón que pedir permiso". **Grace Hopper**, conocida como "Amazing Grace", fue la científica de la computación que transformó la tecnología de una herramienta puramente matemática en una herramienta de gestión empresarial.
+
+* **La Invención del Compilador:** En una época donde programar requería conocer íntimamente el hardware y escribir en código binario (0 y 1), Hopper propuso que los programas podrían escribirse en un lenguaje basado en palabras (inglés). Desarrolló el **A-0**, el primer sistema que traducía símbolos matemáticos y palabras en instrucciones que la máquina podía entender.
+* **El Nacimiento de COBOL:** Fue la fuerza motriz detrás del lenguaje **COBOL** (*Common Business-Oriented Language*). A diferencia de los lenguajes científicos de la época, COBOL fue diseñado específicamente para el procesamiento de datos comerciales, contabilidad y administración.
+
+
+
+* **Elevación del Nivel de Abstracción:** El trabajo de Hopper permitió ocultar la complejidad física de la computadora. Esto significa que un administrador financiero podía definir un proceso (por ejemplo, "Calcular Interés") usando términos lógicos en lugar de manipular registros de memoria físicos.
+* **Democratización del Acceso:** Su visión permitió que profesionales de áreas administrativas y financieras interactuaran con sistemas informáticos. Sin sus compiladores, la informática se habría quedado estancada en los laboratorios de física, y la automatización bancaria o empresarial tal como la conocemos hoy no existiría.
+
+* **Legado en la Eficiencia:** Al estandarizar los lenguajes de programación, Hopper hizo que el software fuera portable entre diferentes máquinas. Para una organización, esto significó que los algoritmos financieros ya no dependían de una máquina específica, facilitando la escalabilidad y la auditoría de procesos digitales.
 <img src="_static\images\2historia.png"/>
 
 
