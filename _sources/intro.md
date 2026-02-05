@@ -173,25 +173,53 @@ Estas son algunas de las referencias usadas para este curso.
 
 ---
 
-## Reglas de Juego 🕹️📏
+## Reglas de Juego
 
-* Clases magistrales para conceptualización del tema
-* Quices
-* Trabajo en clase y actividades:  Notebooks y repositorios
-* Proyecto Final
+* Clases magistrales para conceptualización del tema.
+* Quices.
+* Trabajo en clase y actividades: Notebooks y repositorios.
+* Proyecto Final.
 
+### Distribución de Evaluación
 
-::::{grid} 1
+::::{card-carousel} 2
 
-:::{grid-item}
-:columns: 8
-:class: sd-m-auto
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
 
-<img src="_static/images/Evaluacion.png" width="600" height="400" />
+```{image} _static/images/parcial1.png
+:height: 300
+```
+
 :::
-::::
 
----
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+
+```{image} _static/images/parcial2.png
+:height: 300
+```
+
+
+:::
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+
+```{image} _static/images/parcial3.png
+:height: 300
+```
+
+
+:::
+
+::::
 
 ## ¿Qué vamos a ver durante el curso?
 
