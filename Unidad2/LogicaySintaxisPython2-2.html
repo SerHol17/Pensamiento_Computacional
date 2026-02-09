@@ -1,0 +1,1928 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sintaxis de programación python &#8212; Pensamiento computacional - 01 Ucaldas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Unidad2/LogicaySintaxisPython2-2';</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="prev" title="2.1.3 Introducción a la Programación con Python" href="Colab.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-light" alt="Pensamiento computacional - 01 Ucaldas - Home"/>
+    <script>document.write(`<img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-dark" alt="Pensamiento computacional - 01 Ucaldas - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Pensamiento Computacional
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Unidad1.html">Unidad 1: Introducción al Pensamiento Computacional</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Unidad2.html">Unidad 2: Diseño y Evaluación de Algoritmos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2_1.html">2.1.1 Lógica de Programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Colab.html">2.1.3 Introducción a la Programación con Python</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sintaxis de programación python</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/SerHol17/Pensamiento_Computacional/blob/main/Unidad2/LogicaySintaxisPython2-2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional/issues/new?title=Issue%20on%20page%20%2FUnidad2/LogicaySintaxisPython2-2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Unidad2/LogicaySintaxisPython2-2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sintaxis de programación python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables-en-python">Tipos de Variables en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-numericos">Tipos Numéricos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enteros-int">Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-matematicas-basicas">Operaciones Matemáticas Básicas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guardando-resultados-en-variables">Guardando resultados en variables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-avanzadas">Operaciones Avanzadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orden-de-operaciones-pemdas">Orden de Operaciones (PEMDAS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicionales-if-elif-else">Condicionales (if, elif, else)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">Operadores de Comparación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-declaracion-if-si">1. La declaración <code class="docutils literal notranslate"><span class="pre">if</span></code> (Si…)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-declaracion-else-si-no">2. La declaración <code class="docutils literal notranslate"><span class="pre">else</span></code> (Si no…)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-declaracion-elif-si-no-si">3. La declaración <code class="docutils literal notranslate"><span class="pre">elif</span></code> (Si no, si…)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos-and-or-not">Operadores Lógicos (and, or, not)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-y">1. <code class="docutils literal notranslate"><span class="pre">and</span></code> (Y)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or-o">2. <code class="docutils literal notranslate"><span class="pre">or</span></code> (O)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-no">3. <code class="docutils literal notranslate"><span class="pre">not</span></code> (No)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinando-operadores">4. Combinando Operadores</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucles-o-ciclos-while-y-for">Bucles o Ciclos (while y for)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-bucle-while-mientras">1. El Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> (Mientras)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-bucle-for-para">2. El Bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> (Para)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-range">Usando <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlando-el-bucle-break-y-continue">3. Controlando el Bucle: <code class="docutils literal notranslate"><span class="pre">break</span></code> y <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-mas-simple-definir-y-llamar">1. La Función más simple (Definir y Llamar)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-inputs">2. Parámetros (Inputs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-de-retorno-outputs">3. El Valor de Retorno (Outputs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-completo-funciones-con-logica">4. Ejemplo Completo: Funciones con Lógica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-del-usuario-funcion-input">Inputs del Usuario (Función <code class="docutils literal notranslate"><span class="pre">input()</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-mas-importante">¡Lo más Importante!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convirtiendo-el-input-a-numeros">Convirtiendo el Input a Números</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-uniendo-todo">Ejemplo Práctico: Uniendo todo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-try-except">Manejo de Errores (try / except)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-estructura-try-except">La Estructura <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poniendo-todo-junto-un-bucle-while-para-forzar-un-input-correcto">Poniendo todo junto: Un Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> para Forzar un Input Correcto</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-adivina-el-numero">Ejercicio 1: Adivina el Número</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sintaxis-de-programacion-python">
+<h1>Sintaxis de programación python<a class="headerlink" href="#sintaxis-de-programacion-python" title="Link to this heading">#</a></h1>
+<section id="tipos-de-variables-en-python">
+<h2>Tipos de Variables en Python<a class="headerlink" href="#tipos-de-variables-en-python" title="Link to this heading">#</a></h2>
+<p>En Python, una variable es un contenedor para almacenar un valor. Piensa en ella como una caja etiquetada donde guardas datos.</p>
+<p>Cuando asignas un valor a una variable, Python automáticamente entiende qué tipo de dato es.</p>
+</section>
+<section id="tipos-numericos">
+<h2>Tipos Numéricos<a class="headerlink" href="#tipos-numericos" title="Link to this heading">#</a></h2>
+<p>Se usan para números.</p>
+<section id="enteros-int">
+<h3>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Link to this heading">#</a></h3>
+<p>Números completos, sin parte decimal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un entero positivo</span>
+<span class="n">edad</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># Un entero negativo</span>
+<span class="n">deuda</span> <span class="o">=</span> <span class="o">-</span><span class="mi">500</span>
+</pre></div>
+</div>
+<p>Flotantes (float)
+Números que tienen una parte decimal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un número decimal</span>
+<span class="n">precio_producto</span> <span class="o">=</span> <span class="mf">149.95</span>
+
+<span class="c1"># Otro número decimal</span>
+<span class="n">tasa_interes</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+
+<span class="n">decimal</span><span class="o">=</span><span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cadenas (str)
+Se usan para guardar texto. El texto debe ir entre comillas simples (”) o dobles («)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Una cadena con comillas dobles</span>
+<span class="n">nombre_usuario</span> <span class="o">=</span> <span class="s2">&quot;Sergio&quot;</span>
+
+<span class="c1"># Una cadena con comillas simples</span>
+<span class="n">mensaje</span> <span class="o">=</span> <span class="s1">&#39;Bienvenido&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Booleanos (bool)
+Representan un valor de verdad. Solo pueden ser True (Verdadero) o False (Falso). Se usan para tomar decisiones.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un valor booleano verdadero</span>
+<span class="n">esta_activo</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Un valor booleano falso</span>
+<span class="n">tiene_permiso</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nulo (NoneType)
+Se usa para representar la ausencia de un valor. Su único valor es None.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Una variable que intencionalmente no tiene valor</span>
+<span class="n">resultado_consulta</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#mostrar valores por consola</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mundo, estoy programando&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola mundo, estoy programando
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;sergio&quot;</span>
+<span class="n">estudiante</span><span class="o">=</span><span class="s2">&quot;Programación para analitica de datos&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mi nombre es&quot;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="s2">&quot;Y estoy en el curso de &quot;</span><span class="p">,</span> <span class="n">estudiante</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola mi nombre es sergio Y estoy en el curso de  Programación para analitica de datos
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operaciones-matematicas-basicas">
+<h2>Operaciones Matemáticas Básicas<a class="headerlink" href="#operaciones-matematicas-basicas" title="Link to this heading">#</a></h2>
+<p>Python puede usarse como una potente calculadora. Puedes sumar, restar, multiplicar y dividir números directamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suma (+)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># Resta (-)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Multiplicación (*)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># División (/)</span>
+<span class="c1"># Nota: La división normal (/) siempre devuelve un número decimal (float).</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">50</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+12
+30
+10.0
+3.5
+</pre></div>
+</div>
+</div>
+</div>
+<section id="guardando-resultados-en-variables">
+<h3>Guardando resultados en variables<a class="headerlink" href="#guardando-resultados-en-variables" title="Link to this heading">#</a></h3>
+<p>Para que nuestro programa sea útil, generalmente guardamos los números en <strong>variables</strong> (un espacio en la memoria con un nombre) y operamos con ellas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">suma</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">resta</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">multiplicacion</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="n">division</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La suma es:&quot;</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La resta es:&quot;</span><span class="p">,</span> <span class="n">resta</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La multiplicación es:&quot;</span><span class="p">,</span> <span class="n">multiplicacion</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La división es:&quot;</span><span class="p">,</span> <span class="n">division</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La suma es: 24
+La resta es: 16
+La multiplicación es: 80
+La división es: 5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operaciones-avanzadas">
+<h2>Operaciones Avanzadas<a class="headerlink" href="#operaciones-avanzadas" title="Link to this heading">#</a></h2>
+<p>Existen otras operaciones muy comunes en programación:</p>
+<ul class="simple">
+<li><p><strong>División Entera (<code class="docutils literal notranslate"><span class="pre">//</span></code>):</strong> Realiza la división pero descarta (elimina) la parte decimal.</p></li>
+<li><p><strong>Módulo o Residuo (<code class="docutils literal notranslate"><span class="pre">%</span></code>):</strong> Devuelve el <em>resto</em> que sobra de una división entera.</p></li>
+<li><p><strong>Potencia (<code class="docutils literal notranslate"><span class="pre">**</span></code>):</strong> Eleva un número a la potencia de otro (exponente).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># División Entera (//)</span>
+<span class="c1"># Compara 7 / 2 (que dio 3.5) con 7 // 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;División Entera:&quot;</span><span class="p">,</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;División Entera:&quot;</span><span class="p">,</span> <span class="mi">10</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Módulo o Residuo (%)</span>
+<span class="c1"># 7 dividido 2 es 3, con 1 de residuo.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Módulo:&quot;</span><span class="p">,</span> <span class="mi">7</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 10 dividido 3 es 3, con 1 de residuo.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Módulo:&quot;</span><span class="p">,</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># El módulo es muy útil para saber si un número es par (residuo 0) o impar (residuo 1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿Es 10 par?&quot;</span><span class="p">,</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿Es 9 par?&quot;</span><span class="p">,</span> <span class="mi">9</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Potencia (**)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Potencia (5^2):&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 5 elevado a la 2 (5x5)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Potencia (2^3):&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 2 elevado a la 3 (2x2x2)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>División Entera: 3
+División Entera: 3
+Módulo: 1
+Módulo: 1
+¿Es 10 par? 0
+¿Es 9 par? 1
+Potencia (5^2): 25
+Potencia (2^3): 8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="orden-de-operaciones-pemdas">
+<h2>Orden de Operaciones (PEMDAS)<a class="headerlink" href="#orden-de-operaciones-pemdas" title="Link to this heading">#</a></h2>
+<p>Python respeta el orden matemático estándar para resolver las operaciones, a veces recordado como <strong>PEMDAS</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>P</strong>aréntesis <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p><strong>E</strong>xponentes <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
+<li><p><strong>M</strong>ultiplicación <code class="docutils literal notranslate"><span class="pre">*</span></code> y <strong>D</strong>ivisión <code class="docutils literal notranslate"><span class="pre">/</span></code> (junto con <code class="docutils literal notranslate"><span class="pre">//</span></code> y <code class="docutils literal notranslate"><span class="pre">%</span></code>)</p></li>
+<li><p><strong>A</strong>dición <code class="docutils literal notranslate"><span class="pre">+</span></code> y <strong>S</strong>ustracción <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+</ol>
+<p>Si tienes dudas sobre el orden, <strong>¡usa paréntesis!</strong> Hacen que el código sea más fácil de leer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin paréntesis</span>
+<span class="c1"># Python primero hace 5 * 3, y luego suma 10</span>
+<span class="n">operacion_1</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sin paréntesis (10 + 5 * 3):&quot;</span><span class="p">,</span> <span class="n">operacion_1</span><span class="p">)</span>
+
+<span class="c1"># Con paréntesis</span>
+<span class="c1"># Python primero resuelve el (10 + 5), y luego multiplica por 3</span>
+<span class="n">operacion_2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Con paréntesis ((10 + 5) * 3):&quot;</span><span class="p">,</span> <span class="n">operacion_2</span><span class="p">)</span>
+
+<span class="c1"># Ejemplo complejo</span>
+<span class="c1"># 1. Paréntesis: (5 + 1) = 6</span>
+<span class="c1"># 2. Exponente: (2**2) = 4</span>
+<span class="c1"># 3. Multiplicación/División: (4*6) = 24  y  (10 / 4) = 2.5</span>
+<span class="c1"># 4. Resta: 24 - 2.5 = 21.5</span>
+<span class="n">resultado_complejo</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado complejo:&quot;</span><span class="p">,</span> <span class="n">resultado_complejo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sin paréntesis (10 + 5 * 3): 25
+Con paréntesis ((10 + 5) * 3): 45
+Resultado complejo: 21.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="condicionales-if-elif-else">
+<h2>Condicionales (if, elif, else)<a class="headerlink" href="#condicionales-if-elif-else" title="Link to this heading">#</a></h2>
+<p>Los condicionales le permiten a tu programa tomar decisiones. El código se ejecuta (o no) dependiendo de si una condición es verdadera (<code class="docutils literal notranslate"><span class="pre">True</span></code>) o falsa (<code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<section id="operadores-de-comparacion">
+<h3>Operadores de Comparación<a class="headerlink" href="#operadores-de-comparacion" title="Link to this heading">#</a></h3>
+<p>Para crear condiciones, usamos operadores de comparación. Los más importantes son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> : ¿Es igual a?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> : ¿Es diferente de?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> : ¿Es mayor que?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> : ¿Es menor que?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> : ¿Es mayor o igual que?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> : ¿Es menor o igual que?</p></li>
+</ul>
+<p>Estos operadores <strong>siempre</strong> devuelven un valor Booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edad</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">nota</span> <span class="o">=</span> <span class="mi">75</span>
+
+<span class="c1"># Ejemplos de comparaciones</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿La edad es igual a 18?&quot;</span><span class="p">,</span> <span class="n">edad</span> <span class="o">==</span> <span class="mi">18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿La nota es diferente de 80?&quot;</span><span class="p">,</span> <span class="n">nota</span> <span class="o">!=</span> <span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿La edad es mayor que 20?&quot;</span><span class="p">,</span> <span class="n">edad</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿La nota es menor o igual a 75?&quot;</span><span class="p">,</span> <span class="n">nota</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿La edad es igual a 18? True
+¿La nota es diferente de 80? True
+¿La edad es mayor que 20? False
+¿La nota es menor o igual a 75? True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="la-declaracion-if-si">
+<h3>1. La declaración <code class="docutils literal notranslate"><span class="pre">if</span></code> (Si…)<a class="headerlink" href="#la-declaracion-if-si" title="Link to this heading">#</a></h3>
+<p>El <code class="docutils literal notranslate"><span class="pre">if</span></code> es la estructura más simple. Si la condición es <code class="docutils literal notranslate"><span class="pre">True</span></code>, el código <em>indentado</em> (con espacio) debajo de él se ejecuta. Si es <code class="docutils literal notranslate"><span class="pre">False</span></code>, se salta.</p>
+<p><strong>¡Importante!</strong> Python usa la <strong>indentación</strong> (el espacio al inicio de la línea) para saber qué código pertenece al <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edad_usuario</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="c1"># Si el usuario es mayor o igual a 18, se ejecuta el print.</span>
+<span class="k">if</span> <span class="n">edad_usuario</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eres mayor de edad, puedes entrar.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Esta línea se ejecuta siempre, porque no está indentada.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Esta línea se ejecuta siempre, porque no está indentada.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="la-declaracion-else-si-no">
+<h3>2. La declaración <code class="docutils literal notranslate"><span class="pre">else</span></code> (Si no…)<a class="headerlink" href="#la-declaracion-else-si-no" title="Link to this heading">#</a></h3>
+<p>El <code class="docutils literal notranslate"><span class="pre">else</span></code> se usa para ejecutar un bloque de código si la condición del <code class="docutils literal notranslate"><span class="pre">if</span></code> fue <code class="docutils literal notranslate"><span class="pre">False</span></code>. No lleva condición propia, simplemente captura todos los demás casos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota_estudiante</span> <span class="o">=</span> <span class="mi">78</span>
+
+<span class="c1"># Si la nota es 70 o más, aprueba.</span>
+<span class="k">if</span> <span class="n">nota_estudiante</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Felicidades! Aprobaste.&quot;</span><span class="p">)</span>
+<span class="c1"># De lo contrario (si la nota NO fue &gt;= 70), reprueba.</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lo sentimos, no aprobaste. Sigue intentando.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Felicidades! Aprobaste.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="la-declaracion-elif-si-no-si">
+<h3>3. La declaración <code class="docutils literal notranslate"><span class="pre">elif</span></code> (Si no, si…)<a class="headerlink" href="#la-declaracion-elif-si-no-si" title="Link to this heading">#</a></h3>
+<p>El <code class="docutils literal notranslate"><span class="pre">elif</span></code> (contracción de «else if») nos permite revisar <em>múltiples</em> condiciones en orden.</p>
+<p>Python revisa el <code class="docutils literal notranslate"><span class="pre">if</span></code>. Si es <code class="docutils literal notranslate"><span class="pre">False</span></code>, revisa el primer <code class="docutils literal notranslate"><span class="pre">elif</span></code>. Si es <code class="docutils literal notranslate"><span class="pre">False</span></code>, revisa el siguiente <code class="docutils literal notranslate"><span class="pre">elif</span></code>, y así sucesivamente. Si todos son <code class="docutils literal notranslate"><span class="pre">False</span></code>, ejecuta el <code class="docutils literal notranslate"><span class="pre">else</span></code> (si existe).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número es positivo.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número es negativo.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número es cero.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El número es negativo.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de un menú simple</span>
+<span class="n">opcion</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+
+<span class="k">if</span> <span class="n">opcion</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seleccionaste la Opción A.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">opcion</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seleccionaste la Opción B.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">opcion</span> <span class="o">==</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seleccionaste la Opción C.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">opcion</span> <span class="o">==</span><span class="s2">&quot;D&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seleccionaste la Opción D.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opción no válida.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Seleccionaste la Opción A.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operadores-logicos-and-or-not">
+<h2>Operadores Lógicos (and, or, not)<a class="headerlink" href="#operadores-logicos-and-or-not" title="Link to this heading">#</a></h2>
+<p>A veces necesitas revisar más de una condición a la vez en un <code class="docutils literal notranslate"><span class="pre">if</span></code>. Para esto usamos los operadores lógicos, que nos permiten combinar expresiones booleanas (Verdadero/Falso).</p>
+<section id="and-y">
+<h3>1. <code class="docutils literal notranslate"><span class="pre">and</span></code> (Y)<a class="headerlink" href="#and-y" title="Link to this heading">#</a></h3>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">and</span></code> devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> <strong>solamente si ambas</strong> condiciones son <code class="docutils literal notranslate"><span class="pre">True</span></code>. Si una sola (o ambas) es <code class="docutils literal notranslate"><span class="pre">False</span></code>, el resultado total es <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></code>   -&gt; <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code>  -&gt; <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">True</span></code>  -&gt; <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">False</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de &#39;and&#39;: ¿Es un adulto en edad de trabajar?</span>
+<span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">tiene_trabajo</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Ambas condiciones deben ser verdaderas para que se ejecute el &#39;if&#39;</span>
+<span class="k">if</span> <span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">edad</span> <span class="o">&lt;=</span> <span class="mi">65</span><span class="p">:</span> <span class="c1">#&amp; PARA UNIR CONDICIONES TAMBIEN SE USA EL &amp; Y TAMBIÉN ES UN AND</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Está en el rango de edad laboral.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No está en el rango de edad laboral.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ejemplo con dos variables booleanas</span>
+<span class="k">if</span> <span class="n">tiene_trabajo</span> <span class="ow">and</span> <span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es un adulto que trabaja.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">tiene_trabajo</span> <span class="ow">and</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es un menor que trabaja.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">tiene_trabajo</span> <span class="ow">and</span> <span class="n">edad</span> <span class="o">&gt;=</span><span class="mi">18</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;es un mayor que no tiene trabajo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Está en el rango de edad laboral.
+es un mayor que no tiene trabajo
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="or-o">
+<h3>2. <code class="docutils literal notranslate"><span class="pre">or</span></code> (O)<a class="headerlink" href="#or-o" title="Link to this heading">#</a></h3>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">or</span></code> devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> <strong>si al menos una</strong> de las condiciones es <code class="docutils literal notranslate"><span class="pre">True</span></code>. Solo devuelve <code class="docutils literal notranslate"><span class="pre">False</span></code> si <em>ambas</em> son <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span></code>   -&gt; <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span></code>  -&gt; <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">True</span></code>  -&gt; <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">False</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de &#39;or&#39;: ¿Puede entrar gratis al parque?</span>
+<span class="n">es_estudiante</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">es_adulto_mayor</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Solo una de las dos necesita ser verdadera</span>
+<span class="k">if</span> <span class="n">es_estudiante</span> <span class="ow">or</span> <span class="n">es_adulto_mayor</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puede entrar gratis.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Debe pagar la entrada.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ejemplo donde ambas son falsas</span>
+<span class="n">es_estudiante</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">es_adulto_mayor</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">es_estudiante</span> <span class="ow">or</span> <span class="n">es_adulto_mayor</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puede entrar gratis.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Debe pagar la entrada.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Puede entrar gratis.
+Debe pagar la entrada.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="not-no">
+<h3>3. <code class="docutils literal notranslate"><span class="pre">not</span></code> (No)<a class="headerlink" href="#not-no" title="Link to this heading">#</a></h3>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">not</span></code> es más simple: <strong>invierte</strong> el valor booleano. <code class="docutils literal notranslate"><span class="pre">True</span></code> se convierte en <code class="docutils literal notranslate"><span class="pre">False</span></code> y <code class="docutils literal notranslate"><span class="pre">False</span></code> se convierte en <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Es útil para verificar si algo <em>no</em> es verdadero.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code>  -&gt; <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">False</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de &#39;not&#39;:</span>
+<span class="n">esta_lloviendo</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># &#39;not esta_lloviendo&#39; se traduce a &#39;not False&#39;, que es True.</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">esta_lloviendo</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El día está soleado, ¡vamos a caminar!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Está lloviendo, mejor nos quedamos en casa.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Otro ejemplo</span>
+<span class="n">puerta_cerrada</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">puerta_cerrada</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La puerta está abierta.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La puerta está cerrada.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El día está soleado, ¡vamos a caminar!
+La puerta está cerrada.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="combinando-operadores">
+<h3>4. Combinando Operadores<a class="headerlink" href="#combinando-operadores" title="Link to this heading">#</a></h3>
+<p>Puedes usar múltiples operadores juntos. Al igual que en matemáticas, puedes usar paréntesis <code class="docutils literal notranslate"><span class="pre">()</span></code> para agrupar y definir el orden en que se revisan las condiciones.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de combinación: ¿Puede conducir un vehículo?</span>
+<span class="n">edad_conductor</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="n">tiene_licencia</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">esta_sobrio</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># ( (Debe ser &gt;= 18 Y tener licencia) Y (debe estar sobrio) )</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">edad_conductor</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">tiene_licencia</span><span class="p">)</span> <span class="ow">and</span> <span class="n">esta_sobrio</span><span class="p">:</span>
+    <span class="c1">#true and true</span>
+    <span class="c1">#True</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Puede conducir.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No cumple los requisitos para conducir.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Ejemplo con &#39;or&#39; y &#39;and&#39;</span>
+<span class="c1"># ¿Aprueba el curso? Necesita nota &gt;= 70 Y (asistencia &gt;= 80 O presentar excusa)</span>
+<span class="n">nota_final</span> <span class="o">=</span> <span class="mi">85</span>
+<span class="n">asistencia</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="n">presento_excusa</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">nota_final</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="ow">and</span> <span class="p">(</span><span class="n">asistencia</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="ow">or</span> <span class="n">presento_excusa</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Felicidades, aprobaste el curso.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No aprobaste el curso.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Puede conducir.
+Felicidades, aprobaste el curso.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bucles-o-ciclos-while-y-for">
+<h2>Bucles o Ciclos (while y for)<a class="headerlink" href="#bucles-o-ciclos-while-y-for" title="Link to this heading">#</a></h2>
+<p>Los bucles nos permiten <strong>repetir</strong> un bloque de código varias veces. Hay dos tipos principales en Python: <code class="docutils literal notranslate"><span class="pre">while</span></code> y <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<section id="el-bucle-while-mientras">
+<h3>1. El Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> (Mientras)<a class="headerlink" href="#el-bucle-while-mientras" title="Link to this heading">#</a></h3>
+<p>El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> repite un bloque de código <strong>mientras</strong> una condición específica sea <code class="docutils literal notranslate"><span class="pre">True</span></code>. Es como un <code class="docutils literal notranslate"><span class="pre">if</span></code> que se ejecuta una y otra vez.</p>
+<p><strong>¡Importante!</strong> Necesitas asegurarte de que la condición en algún momento se vuelva <code class="docutils literal notranslate"><span class="pre">False</span></code>, de lo contrario, crearás un <strong>bucle infinito</strong>. Generalmente, esto se hace con una variable «contador».</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usaremos un contador para controlar el bucle</span>
+<span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Mientras el contador sea menor que 5, ejecuta el código</span>
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El contador es:&quot;</span><span class="p">,</span> <span class="n">contador</span><span class="p">)</span>
+    <span class="c1"># ¡Línea crucial! Incrementamos el contador.</span>
+    <span class="c1"># Si olvidas esto, contador siempre será 0 y el bucle nunca terminará.</span>
+    <span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin del bucle while.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El contador es: 0
+El contador es: 1
+El contador es: 2
+El contador es: 3
+El contador es: 4
+Fin del bucle while.
+Ingrese el codigo5647
+Acceso denegado
+Ingrese el codigo7894
+Acceso denegado
+Ingrese el codigo1234
+Acceso denegado
+Bienvenido
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="el-bucle-for-para">
+<h3>2. El Bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> (Para)<a class="headerlink" href="#el-bucle-for-para" title="Link to this heading">#</a></h3>
+<p>El bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> se usa para <strong>iterar</strong> (recorrer) una secuencia. Para empezar, la forma más común de usarlo es para repetir algo un número exacto de veces usando la función <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
+<section id="usando-range">
+<h4>Usando <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#usando-range" title="Link to this heading">#</a></h4>
+<p>La función <code class="docutils literal notranslate"><span class="pre">range()</span></code> genera una secuencia de números que el <code class="docutils literal notranslate"><span class="pre">for</span></code> puede recorrer.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range(5)</span></code> genera una secuencia de números del 0 al 4 (5 números en total).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(inicio,</span> <span class="pre">fin)</span></code> genera números desde <code class="docutils literal notranslate"><span class="pre">inicio</span></code> hasta <code class="docutils literal notranslate"><span class="pre">fin</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(inicio,</span> <span class="pre">fin,</span> <span class="pre">paso)</span></code> genera números desde <code class="docutils literal notranslate"><span class="pre">inicio</span></code> hasta <code class="docutils literal notranslate"><span class="pre">fin</span> <span class="pre">-</span> <span class="pre">1</span></code>, saltando de <code class="docutils literal notranslate"><span class="pre">paso</span></code> en <code class="docutils literal notranslate"><span class="pre">paso</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># range(5) genera los números 0, 1, 2, 3, 4</span>
+<span class="c1"># La variable &#39;i&#39; (de &quot;iteración&quot;) tomará cada uno de esos valores</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bucle for con range(5):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># range() también puede recibir un inicio y un fin: range(inicio, fin)</span>
+<span class="c1"># El &#39;fin&#39; no se incluye.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Bucle for con range(2, 6):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span> <span class="c1"># Genera 2, 3, 4, 5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+
+<span class="c1"># También puedes agregar un &quot;paso&quot; (step)</span>
+<span class="c1"># range(inicio, fin, paso)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Bucle for contando de 2 en 2 (del 0 al 10):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="c1"># Genera 0, 2, 4, 6, 8, 10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bucle for con range(5):
+0
+1
+2
+3
+4
+
+Bucle for con range(2, 6):
+2
+3
+4
+5
+
+Bucle for contando de 2 en 2 (del 0 al 10):
+0
+2
+4
+6
+8
+10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="controlando-el-bucle-break-y-continue">
+<h3>3. Controlando el Bucle: <code class="docutils literal notranslate"><span class="pre">break</span></code> y <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#controlando-el-bucle-break-y-continue" title="Link to this heading">#</a></h3>
+<p>A veces quieres alterar el comportamiento normal de un bucle.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code> (Romper): <strong>Detiene y sale</strong> del bucle inmediatamente.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continue</span></code> (Continuar): <strong>Salta</strong> el resto del código de la iteración actual y pasa a la siguiente.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de &#39;break&#39;</span>
+<span class="c1"># Buscar el número 7 en un rango del 0 al 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ejemplo de break:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Encontré el 7! Saliendo del bucle...&quot;</span><span class="p">)</span>
+        <span class="k">break</span> <span class="c1"># Termina el bucle</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="c1"># Ejemplo de &#39;continue&#39;</span>
+<span class="c1"># Imprimir solo los números pares de un rango</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ejemplo de continue:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># Si el número es impar (el residuo de dividir por 2 es 1)...</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">continue</span> <span class="c1"># ...salta esta iteración y no ejecutes el print</span>
+
+    <span class="c1"># Este print solo se ejecuta si el &#39;continue&#39; no se activó</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ejemplo de break:
+0
+1
+2
+3
+4
+5
+6
+¡Encontré el 7! Saliendo del bucle...
+
+Ejemplo de continue:
+0
+2
+4
+6
+8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El &quot;</span><span class="p">,</span><span class="n">num</span><span class="p">,</span><span class="s2">&quot; es impar &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y multiplo de 3&quot;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">num</span> <span class="o">%</span><span class="mi">9</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; y multiplo de 9&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El  1  es impar 
+El  3  es impar 
+y multiplo de 3
+El  5  es impar 
+El  7  es impar 
+El  9  es impar 
+y multiplo de 3
+ y multiplo de 9
+El  11  es impar 
+El  13  es impar 
+El  15  es impar 
+y multiplo de 3
+El  17  es impar 
+El  19  es impar 
+El  21  es impar 
+y multiplo de 3
+El  23  es impar 
+El  25  es impar 
+El  27  es impar 
+y multiplo de 3
+ y multiplo de 9
+El  29  es impar 
+El  31  es impar 
+El  33  es impar 
+y multiplo de 3
+El  35  es impar 
+El  37  es impar 
+El  39  es impar 
+y multiplo de 3
+El  41  es impar 
+El  43  es impar 
+El  45  es impar 
+y multiplo de 3
+ y multiplo de 9
+El  47  es impar 
+El  49  es impar 
+El  51  es impar 
+y multiplo de 3
+El  53  es impar 
+El  55  es impar 
+El  57  es impar 
+y multiplo de 3
+El  59  es impar 
+El  61  es impar 
+El  63  es impar 
+y multiplo de 3
+ y multiplo de 9
+El  65  es impar 
+El  67  es impar 
+El  69  es impar 
+y multiplo de 3
+El  71  es impar 
+El  73  es impar 
+El  75  es impar 
+y multiplo de 3
+El  77  es impar 
+El  79  es impar 
+El  81  es impar 
+y multiplo de 3
+ y multiplo de 9
+El  83  es impar 
+El  85  es impar 
+El  87  es impar 
+y multiplo de 3
+El  89  es impar 
+El  91  es impar 
+El  93  es impar 
+y multiplo de 3
+El  95  es impar 
+El  97  es impar 
+El  99  es impar 
+y multiplo de 3
+ y multiplo de 9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="funciones">
+<h2>Funciones<a class="headerlink" href="#funciones" title="Link to this heading">#</a></h2>
+<p>Una <strong>función</strong> es un bloque de código reutilizable que realiza una tarea específica. Piensa en ellas como «mini-programas» que puedes definir una vez y «llamar» (ejecutar) cada vez que las necesites.</p>
+<p>Usar funciones nos ayuda a:</p>
+<ol class="arabic simple">
+<li><p><strong>No Repetir Código (DRY - Don’t Repeat Yourself)</strong>: Si haces la misma tarea 5 veces, es mejor escribir una función.</p></li>
+<li><p><strong>Organizar</strong>: Hacen que el código sea mucho más limpio y fácil de leer.</p></li>
+</ol>
+<p>Se definen con la palabra clave <code class="docutils literal notranslate"><span class="pre">def</span></code>, un nombre, paréntesis <code class="docutils literal notranslate"><span class="pre">()</span></code> y dos puntos <code class="docutils literal notranslate"><span class="pre">:</span></code>. El código dentro de la función debe estar <strong>indentado</strong>.</p>
+<section id="la-funcion-mas-simple-definir-y-llamar">
+<h3>1. La Función más simple (Definir y Llamar)<a class="headerlink" href="#la-funcion-mas-simple-definir-y-llamar" title="Link to this heading">#</a></h3>
+<p>Esta es una función simple que no recibe ni devuelve nada; solo realiza una acción (imprimir un saludo).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Definimos la función</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">saludar</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Hola!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bienvenido a este notebook de Python.&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. La llamamos para que se ejecute</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Antes de llamar la función ---&quot;</span><span class="p">)</span>
+<span class="n">saludar</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Después de llamar la función ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># La ventaja es que la podemos reutilizar (llamar) cuantas veces queramos</span>
+<span class="n">saludar</span><span class="p">()</span>
+<span class="n">saludar</span><span class="p">()</span>
+<span class="n">saludar</span><span class="p">()</span>
+<span class="n">saludar</span><span class="p">()</span>
+<span class="n">saludar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Antes de llamar la función ---
+¡Hola!
+Bienvenido a este notebook de Python.
+--- Después de llamar la función ---
+¡Hola!
+Bienvenido a este notebook de Python.
+¡Hola!
+Bienvenido a este notebook de Python.
+¡Hola!
+Bienvenido a este notebook de Python.
+¡Hola!
+Bienvenido a este notebook de Python.
+¡Hola!
+Bienvenido a este notebook de Python.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parametros-inputs">
+<h3>2. Parámetros (Inputs)<a class="headerlink" href="#parametros-inputs" title="Link to this heading">#</a></h3>
+<p>La mayoría de las veces, queremos que nuestra función trabaje con información que le pasamos. Estos «inputs» se llaman <strong>parámetros</strong> (o argumentos).</p>
+<p>Se definen como variables dentro de los paréntesis <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;nombre&#39; es un parámetro. Actúa como una variable</span>
+<span class="c1"># que solo existe dentro de la función.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">saludar_a</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="n">apellido</span><span class="o">=</span><span class="s2">&quot;gomez&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Hola, &quot;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">apellido</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es un gusto tenerte aquí.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ahora, al llamar la función, DEBEMOS pasarle el dato (argumento)</span>
+<span class="n">saludar_a</span><span class="p">(</span><span class="s2">&quot;Ana&quot;</span><span class="p">)</span>
+<span class="n">saludar_a</span><span class="p">(</span><span class="s2">&quot;Carlos&quot;</span><span class="p">)</span>
+<span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Juan&quot;</span>
+<span class="n">saludar_a</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+<span class="n">otra_cosa</span><span class="o">=</span><span class="s2">&quot;Lopez&quot;</span>
+<span class="n">saludar_a</span><span class="p">(</span><span class="s2">&quot;juan&quot;</span><span class="p">)</span>
+
+<span class="n">saludar_a</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Jesús&quot;</span><span class="p">,</span><span class="n">apellido</span><span class="o">=</span><span class="s2">&quot;miranda&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Hola,  Ana gomez !
+Es un gusto tenerte aquí.
+¡Hola,  Carlos gomez !
+Es un gusto tenerte aquí.
+¡Hola,  Juan gomez !
+Es un gusto tenerte aquí.
+¡Hola,  juan gomez !
+Es un gusto tenerte aquí.
+¡Hola,  Jesús miranda !
+Es un gusto tenerte aquí.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="el-valor-de-retorno-outputs">
+<h3>3. El Valor de Retorno (Outputs)<a class="headerlink" href="#el-valor-de-retorno-outputs" title="Link to this heading">#</a></h3>
+<p>Hasta ahora, nuestras funciones solo imprimen en pantalla. Pero, ¿qué pasa si queremos <em>usar</em> el resultado de la función en otra parte de nuestro código?</p>
+<p>Para esto usamos la palabra clave <code class="docutils literal notranslate"><span class="pre">return</span></code>. <code class="docutils literal notranslate"><span class="pre">return</span></code> <strong>devuelve</strong> un valor y termina la ejecución de la función.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esta función NO imprime nada. Solo calcula y devuelve el producto.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">multiplicar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="c1"># Para usar el valor, debemos guardarlo en una variable</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">multiplicar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El resultado de la multiplicación es:&quot;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+
+<span class="c1"># Como &#39;resultado&#39; es un número, podemos usarlo en más operaciones</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El doble del resultado es:&quot;</span><span class="p">,</span> <span class="n">resultado</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># También podemos usar la función directamente</span>
+<span class="k">if</span> <span class="n">multiplicar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El producto es mayor que 15.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El resultado de la multiplicación es: 50
+El doble del resultado es: 100
+El producto es mayor que 15.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-completo-funciones-con-logica">
+<h3>4. Ejemplo Completo: Funciones con Lógica<a class="headerlink" href="#ejemplo-completo-funciones-con-logica" title="Link to this heading">#</a></h3>
+<p>Las funciones son poderosas porque pueden contener toda la lógica que ya vimos (condicionales, bucles, listas).</p>
+<p>Vamos a convertir nuestro Ejercicio 1 (filtrar pares) en una función reutilizable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos una función que recibe UNA lista como parámetro</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">filtrar_numeros_pares</span><span class="p">(</span><span class="n">lista_numeros</span><span class="p">):</span>
+    <span class="n">pares</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Lista vacía para guardar los resultados</span>
+
+    <span class="c1"># Usamos el bucle &#39;for&#39; dentro de la función</span>
+    <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">lista_numeros</span><span class="p">:</span>
+
+        <span class="c1"># Usamos el &#39;if&#39; dentro de la función</span>
+        <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">pares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+
+    <span class="c1"># Al final del bucle, devolvemos la lista de pares</span>
+    <span class="k">return</span> <span class="n">pares</span>
+
+<span class="c1"># --- Ahora podemos USAR la función ---</span>
+
+<span class="n">mi_lista_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">mi_lista_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+
+<span class="c1"># Llamamos la función con la primera lista</span>
+<span class="n">pares_1</span> <span class="o">=</span> <span class="n">filtrar_numeros_pares</span><span class="p">(</span><span class="n">mi_lista_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pares de la Lista 1:&quot;</span><span class="p">,</span> <span class="n">pares_1</span><span class="p">)</span>
+
+<span class="c1"># La reutilizamos con la segunda lista</span>
+<span class="n">pares_2</span> <span class="o">=</span> <span class="n">filtrar_numeros_pares</span><span class="p">(</span><span class="n">mi_lista_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pares de la Lista 2:&quot;</span><span class="p">,</span> <span class="n">pares_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pares de la Lista 1: [2, 4, 6, 8, 10]
+Pares de la Lista 2: [20, 22]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mi_lista_3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">]</span>
+
+<span class="c1"># Llamamos la función con la primera lista</span>
+<span class="n">pares_3</span> <span class="o">=</span> <span class="n">filtrar_numeros_pares</span><span class="p">(</span><span class="n">mi_lista_3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pares de la Lista 3:&quot;</span><span class="p">,</span> <span class="n">pares_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pares de la Lista 3: [10, 12, 14, 16, 18]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="inputs-del-usuario-funcion-input">
+<h2>Inputs del Usuario (Función <code class="docutils literal notranslate"><span class="pre">input()</span></code>)<a class="headerlink" href="#inputs-del-usuario-funcion-input" title="Link to this heading">#</a></h2>
+<p>A veces queremos que nuestro programa sea interactivo y le pida datos al usuario. Para esto usamos la función <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">input()</span></code> detiene la ejecución del programa, muestra un mensaje (opcional) y espera a que el usuario escriba algo y presione «Enter».</p>
+<section id="lo-mas-importante">
+<h3>¡Lo más Importante!<a class="headerlink" href="#lo-mas-importante" title="Link to this heading">#</a></h3>
+<p>La función <code class="docutils literal notranslate"><span class="pre">input()</span></code> <strong>SIEMPRE</strong> devuelve el dato como un <strong>string (texto)</strong>, incluso si el usuario escribe un número.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># El texto dentro de input() es el &quot;prompt&quot; o mensaje que ve el usuario.</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Por favor, escribe tu nombre: &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Hola, &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El tipo de dato de &#39;nombre&#39; es: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Por favor, escribe tu nombre: 58
+¡Hola, 58!
+El tipo de dato de &#39;nombre&#39; es: &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="convirtiendo-el-input-a-numeros">
+<h3>Convirtiendo el Input a Números<a class="headerlink" href="#convirtiendo-el-input-a-numeros" title="Link to this heading">#</a></h3>
+<p>Como <code class="docutils literal notranslate"><span class="pre">input()</span></code> siempre devuelve un string, si queremos usar ese dato para hacer operaciones matemáticas, ¡nos dará un error o un resultado inesperado!</p>
+<p>Para solucionarlo, debemos <strong>convertir</strong> el string a un número usando <code class="docutils literal notranslate"><span class="pre">int()</span></code> (para enteros) o <code class="docutils literal notranslate"><span class="pre">float()</span></code> (para decimales).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de lo que NO funciona:</span>
+<span class="n">edad_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;¿Cuántos años tienes? &quot;</span><span class="p">)</span>
+
+<span class="c1"># Esto dará un error, porque no puedes sumar un número (10) a un string (p.ej. &quot;25&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">edad_string</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿Cuántos años tienes? 12
+12121212121212121212
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># La forma CORRECTA:</span>
+<span class="c1"># 1. Obtenemos el input (un string)</span>
+<span class="c1"># 2. Lo convertimos a entero (int)</span>
+<span class="c1"># 3. Lo guardamos en la variable</span>
+
+<span class="n">edad_numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;¿Cuántos años tienes? &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">edad_futura</span> <span class="o">=</span> <span class="n">edad_numero</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;En 10 años, tendrás </span><span class="si">{</span><span class="n">edad_futura</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿Cuántos años tienes? 50
+En 10 años, tendrás 60 años.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lo mismo aplica para decimales, pero usamos float()</span>
+
+<span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;¿Cuánto mides en metros (ej. 1.75)? &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tu altura es: </span><span class="si">{</span><span class="n">altura</span><span class="si">}</span><span class="s2"> metros.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El tipo de dato de &#39;altura&#39; es: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿Cuánto mides en metros (ej. 1.75)? 1.68
+Tu altura es: 1.68 metros.
+El tipo de dato de &#39;altura&#39; es: &lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-practico-uniendo-todo">
+<h3>Ejemplo Práctico: Uniendo todo<a class="headerlink" href="#ejemplo-practico-uniendo-todo" title="Link to this heading">#</a></h3>
+<p>Vamos a pedir un nombre y un número para crear un programa simple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pedimos el nombre (se queda como string)</span>
+<span class="n">nombre_usuario</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dime tu nombre: &quot;</span><span class="p">))</span>
+
+<span class="c1"># Pedimos el año de nacimiento (lo convertimos a int)</span>
+<span class="n">año_nacimiento</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dime tu año de nacimiento: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Calculamos la edad (aproximada)</span>
+<span class="n">año_actual</span> <span class="o">=</span> <span class="mi">2025</span> <span class="c1"># Puedes cambiar este año</span>
+<span class="n">edad</span> <span class="o">=</span> <span class="n">año_actual</span> <span class="o">-</span> <span class="n">año_nacimiento</span>
+
+<span class="c1"># Mostramos el resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre_usuario</span><span class="si">}</span><span class="s2">, tienes (o cumplirás) </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años en </span><span class="si">{</span><span class="n">año_actual</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dime tu nombre: Juan
+Dime tu año de nacimiento: 1950
+Hola Juan, tienes (o cumplirás) 75 años en 2025.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="manejo-de-errores-try-except">
+<h2>Manejo de Errores (try / except)<a class="headerlink" href="#manejo-de-errores-try-except" title="Link to this heading">#</a></h2>
+<p>Cuando programamos, no todo sale bien. A veces el usuario introduce datos incorrectos, un archivo no se encuentra o intentamos dividir por cero.</p>
+<p>Cuando Python encuentra un error (llamado <strong>Excepción</strong>), el programa se detiene (se «cae») y muestra un mensaje de error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Este código se CAERÁ si escribes una letra en lugar de un número</span>
+
+<span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Escribe un NÚMERO: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El doble de tu número es: </span><span class="si">{</span><span class="n">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Si ejecutas esto y escribes &quot;hola&quot;, verás un &quot;ValueError&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Escribe un NÚMERO: 120.2
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipython-input-1451165603.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Este código se CAERÁ si escribes una letra en lugar de un número</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Escribe un NÚMERO: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El doble de tu número es: </span><span class="si">{</span><span class="n">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;120.2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="la-estructura-try-except">
+<h3>La Estructura <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span></code><a class="headerlink" href="#la-estructura-try-except" title="Link to this heading">#</a></h3>
+<p>Para evitar que el programa se caiga, podemos «intentar» (<code class="docutils literal notranslate"><span class="pre">try</span></code>) ejecutar el código riesgoso. Si falla, podemos «capturar» (<code class="docutils literal notranslate"><span class="pre">except</span></code>) la excepción y ejecutar un código alternativo (como mostrar un mensaje amigable).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">try:</span></code>: Aquí va el código que <strong>podría fallar</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">except:</span></code>: Este bloque solo se ejecuta <strong>si el <code class="docutils literal notranslate"><span class="pre">try</span></code> falla</strong>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># La forma correcta de manejar el error anterior</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># 1. Intentamos convertir el input a entero</span>
+    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Escribe un NÚMERO: &quot;</span><span class="p">)</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El doble de tu número es: </span><span class="si">{</span><span class="n">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="c1"># 2. Si ocurre un &#39;ValueError&#39; (porque escribieron &quot;hola&quot;)</span>
+    <span class="c1">#    este bloque se ejecuta en lugar de caerse.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Eso no es un número válido. Intenta de nuevo.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El programa continúa después del error.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Escribe un NÚMERO: 12.5
+Error: Eso no es un número válido. Intenta de nuevo.
+El programa continúa después del error.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="poniendo-todo-junto-un-bucle-while-para-forzar-un-input-correcto">
+<h3>Poniendo todo junto: Un Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> para Forzar un Input Correcto<a class="headerlink" href="#poniendo-todo-junto-un-bucle-while-para-forzar-un-input-correcto" title="Link to this heading">#</a></h3>
+<p>El uso más común de <code class="docutils literal notranslate"><span class="pre">try/except</span></code> para principiantes es forzar al usuario a que ingrese el dato correcto usando un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>La lógica es:</p>
+<ol class="arabic simple">
+<li><p>Crear un bucle infinito (<code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">try</span></code> (intentar) pedir el input y convertirlo.</p></li>
+<li><p>Si funciona (no hay error), usamos <code class="docutils literal notranslate"><span class="pre">break</span></code> para salir del bucle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">except</span></code> (si falla), mostramos un error y el bucle vuelve a empezar.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Este bucle no se detendrá hasta que ingreses un número entero válido.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Por favor, ingresa tu edad: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+        <span class="c1"># Si la línea de arriba funcionó (no hubo error),</span>
+        <span class="c1"># esta línea se ejecuta y rompe el bucle.</span>
+        <span class="k">break</span>
+
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+
+        <span class="c1"># Si la línea &#39;int(input())&#39; falló, se ejecuta esto</span>
+        <span class="c1"># y el &#39;break&#39; nunca se alcanza. El bucle se repite.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Entrada inválida! Debes ingresar un número entero (ej. 30).&quot;</span><span class="p">)</span>
+
+<span class="c1"># Cuando el bucle finalmente se rompe, esta línea se ejecuta</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Perfecto. Tu edad es </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Por favor, ingresa tu edad: TRECE
+¡Entrada inválida! Debes ingresar un número entero (ej. 30).
+Por favor, ingresa tu edad: 13.3
+¡Entrada inválida! Debes ingresar un número entero (ej. 30).
+Por favor, ingresa tu edad: 13
+Perfecto. Tu edad es 13 años.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejercicio-1-adivina-el-numero">
+<h2>Ejercicio 1: Adivina el Número<a class="headerlink" href="#ejercicio-1-adivina-el-numero" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> Combinar <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code>, <code class="docutils literal notranslate"><span class="pre">try/except</span></code> y <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code>.</p>
+<p>Crea un juego donde el programa «piensa» en un número secreto (puedes definirlo tú, ej. <code class="docutils literal notranslate"><span class="pre">numero_secreto</span> <span class="pre">=</span> <span class="pre">42</span></code>). El programa debe:</p>
+<ol class="arabic simple">
+<li><p>Pedir al usuario que adivine el número.</p></li>
+<li><p>Usar un bucle <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> para que el usuario siga intentando.</p></li>
+<li><p>Usar <code class="docutils literal notranslate"><span class="pre">try/except</span></code> para asegurarse de que el usuario ingrese un <strong>número entero</strong>. Si no, debe mostrar un error y volver a preguntar.</p></li>
+<li><p>Si el usuario ingresa un número, el programa le da pistas:</p>
+<ul class="simple">
+<li><p>Si el número es <strong>menor</strong> al secreto, imprime «¡Demasiado bajo!».</p></li>
+<li><p>Si el número es <strong>mayor</strong> al secreto, imprime «¡Demasiado alto!».</p></li>
+<li><p>Si <strong>acierta</strong>, imprime «¡Correcto! Adivinaste.» y usa <code class="docutils literal notranslate"><span class="pre">break</span></code> para terminar el bucle.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_secreto</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Juego de Adivinar! Intenta adivinar el número secreto (entre 1 y 100).&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Escribe tu código aquí ---</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="n">numero_usuario</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Adivina el número: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">numero_usuario</span> <span class="o">&lt;</span> <span class="n">numero_secreto</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Demasiado bajo!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">numero_usuario</span> <span class="o">&gt;</span> <span class="n">numero_secreto</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Demasiado alto!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontraste el numero ganador, felicitaciones&quot;</span><span class="p">)</span>
+      <span class="k">break</span>
+  <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Entrada inválida! Debes ingresar un número entero (ej. 30).&quot;</span><span class="p">)</span>
+<span class="c1"># --- Fin de tu código ---</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Juego de Adivinar! Intenta adivinar el número secreto (entre 1 y 100).
+Adivina el número: 45.2
+¡Entrada inválida! Debes ingresar un número entero (ej. 30).
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipython-input-1146761818.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>   <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">numero_usuario</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Adivina el número: &quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">if</span> <span class="n">numero_usuario</span> <span class="o">&lt;</span> <span class="n">numero_secreto</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Demasiado bajo!&quot;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>             <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1177</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1178</span>             <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+
+<span class="nn">/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">_input_request</span><span class="nt">(self, prompt, ident, parent, password)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1217</span>             <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span>                 <span class="c1"># re-raise KeyboardInterrupt, to truncate traceback</span>
+<span class="ne">-&gt; </span><span class="mi">1219</span>                 <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span><span class="p">(</span><span class="s2">&quot;Interrupted by user&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1220</span>             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1221</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Invalid Message:&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: Interrupted by user
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Unidad2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Colab.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">2.1.3 Introducción a la Programación con Python</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables-en-python">Tipos de Variables en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-numericos">Tipos Numéricos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enteros-int">Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-matematicas-basicas">Operaciones Matemáticas Básicas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guardando-resultados-en-variables">Guardando resultados en variables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-avanzadas">Operaciones Avanzadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orden-de-operaciones-pemdas">Orden de Operaciones (PEMDAS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicionales-if-elif-else">Condicionales (if, elif, else)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">Operadores de Comparación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-declaracion-if-si">1. La declaración <code class="docutils literal notranslate"><span class="pre">if</span></code> (Si…)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-declaracion-else-si-no">2. La declaración <code class="docutils literal notranslate"><span class="pre">else</span></code> (Si no…)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-declaracion-elif-si-no-si">3. La declaración <code class="docutils literal notranslate"><span class="pre">elif</span></code> (Si no, si…)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos-and-or-not">Operadores Lógicos (and, or, not)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-y">1. <code class="docutils literal notranslate"><span class="pre">and</span></code> (Y)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#or-o">2. <code class="docutils literal notranslate"><span class="pre">or</span></code> (O)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-no">3. <code class="docutils literal notranslate"><span class="pre">not</span></code> (No)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinando-operadores">4. Combinando Operadores</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucles-o-ciclos-while-y-for">Bucles o Ciclos (while y for)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-bucle-while-mientras">1. El Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> (Mientras)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-bucle-for-para">2. El Bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> (Para)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-range">Usando <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlando-el-bucle-break-y-continue">3. Controlando el Bucle: <code class="docutils literal notranslate"><span class="pre">break</span></code> y <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-mas-simple-definir-y-llamar">1. La Función más simple (Definir y Llamar)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-inputs">2. Parámetros (Inputs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-de-retorno-outputs">3. El Valor de Retorno (Outputs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-completo-funciones-con-logica">4. Ejemplo Completo: Funciones con Lógica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-del-usuario-funcion-input">Inputs del Usuario (Función <code class="docutils literal notranslate"><span class="pre">input()</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lo-mas-importante">¡Lo más Importante!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convirtiendo-el-input-a-numeros">Convirtiendo el Input a Números</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-uniendo-todo">Ejemplo Práctico: Uniendo todo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-try-except">Manejo de Errores (try / except)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-estructura-try-except">La Estructura <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poniendo-todo-junto-un-bucle-while-para-forzar-un-input-correcto">Poniendo todo junto: Un Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> para Forzar un Input Correcto</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-adivina-el-numero">Ejercicio 1: Adivina el Número</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Sergio Alejandro Holguin García
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
