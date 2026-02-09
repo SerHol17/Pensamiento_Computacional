@@ -1,4 +1,4 @@
-## 2.1.3 Introducción a la Programación con Python
+## 2.1.2 Introducción a la Programación con Python
 
 Python es un lenguaje de programación de alto nivel, ampliamente utilizado en ciencia de datos, finanzas y automatización debido a su sintaxis clara y legible, muy cercana al lenguaje natural.
 
