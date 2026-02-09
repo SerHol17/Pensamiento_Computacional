@@ -5,4 +5,9 @@ format: jb-book
 root: intro
 chapters:
 - file: Unidad1
+- file: Unidad2
+  sections:
+  - file: Unidad2_1.md
+  - file: Unidad2/Colab.md
+  - file: Unidad2/LogicaySintaxisPython2-2.ipynb
 
