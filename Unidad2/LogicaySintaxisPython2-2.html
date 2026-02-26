@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sintaxis de programación python &#8212; Pensamiento computacional - 01 Ucaldas</title>
+    <title>Tipos de Variables en Python &#8212; Pensamiento computacional - 01 Ucaldas</title>
   
   
   
@@ -187,7 +187,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Colab.html">2.1.2 Introducción a la Programación con Python</a></li>
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sintaxis de programación python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tipos de Variables en Python</a></li>
 </ul>
 </details></li>
 </ul>
@@ -406,7 +406,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sintaxis de programación python</h1>
+    <h1>Tipos de Variables en Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -416,7 +416,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables-en-python">Tipos de Variables en Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-numericos">Tipos Numéricos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enteros-int">Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
 </ul>
@@ -450,6 +449,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlando-el-bucle-break-y-continue">3. Controlando el Bucle: <code class="docutils literal notranslate"><span class="pre">break</span></code> y <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-colecciones-de-datos">Listas (Colecciones de Datos)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-elementos-indices">Accediendo a Elementos (Índices)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-elementos">Modificando Elementos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadiendo-y-eliminando-elementos">Añadiendo y Eliminando Elementos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-y-bucles-for-la-combinacion-perfecta">Listas y Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> (¡La combinación perfecta!)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-utiles-para-listas">Funciones Útiles para Listas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-practica">Ejercicios de Práctica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-filtrado-de-numeros-pares">Ejercicio 1: Filtrado de Números Pares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-contador-de-vocales">Ejercicio 2: Contador de Vocales</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-mas-simple-definir-y-llamar">1. La Función más simple (Definir y Llamar)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-inputs">2. Parámetros (Inputs)</a></li>
@@ -463,12 +475,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-uniendo-todo">Ejemplo Práctico: Uniendo todo</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios">Diccionarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-valores">Accediendo a los Valores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-y-modificar-elementos">Añadir y Modificar Elementos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-elementos-y-verificar-existencia">Eliminar Elementos y Verificar Existencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recorriendo-diccionarios-con-bucles-for">Recorriendo Diccionarios con Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-try-except">Manejo de Errores (try / except)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-estructura-try-except">La Estructura <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poniendo-todo-junto-un-bucle-while-para-forzar-un-input-correcto">Poniendo todo junto: Un Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> para Forzar un Input Correcto</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-adivina-el-numero">Ejercicio 1: Adivina el Número</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-lista-de-compras-interactiva">Ejercicio 2: Lista de Compras Interactiva</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-funcion-de-busqueda-en-diccionario">Ejercicio 3: Función de Búsqueda en Diccionario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4-desafio-mini-sistema-de-calificaciones">Ejercicio 4 (Desafío): Mini-Sistema de Calificaciones</a></li>
 </ul>
             </nav>
         </div>
@@ -480,13 +502,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sintaxis-de-programacion-python">
-<h1>Sintaxis de programación python<a class="headerlink" href="#sintaxis-de-programacion-python" title="Link to this heading">#</a></h1>
-<section id="tipos-de-variables-en-python">
-<h2>Tipos de Variables en Python<a class="headerlink" href="#tipos-de-variables-en-python" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="tipos-de-variables-en-python">
+<h1>Tipos de Variables en Python<a class="headerlink" href="#tipos-de-variables-en-python" title="Link to this heading">#</a></h1>
 <p>En Python, una variable es un contenedor para almacenar un valor. Piensa en ella como una caja etiquetada donde guardas datos.</p>
 <p>Cuando asignas un valor a una variable, Python automáticamente entiende qué tipo de dato es.</p>
-</section>
 <section id="tipos-numericos">
 <h2>Tipos Numéricos<a class="headerlink" href="#tipos-numericos" title="Link to this heading">#</a></h2>
 <p>Se usan para números.</p>
@@ -1269,6 +1288,315 @@ y multiplo de 3
 </div>
 </div>
 </div>
+<p>Clasificación clínica: Escribe un programa que reciba la temperatura corporal de un paciente ingresada por el usuario e imprima su estado: hipotermia (menor a 35°C), temperatura normal (35°C - 37.5°C) o fiebre (mayor a 37.5°C).</p>
+<p>Monitoreo de presión: Desarrolla un sistema de alerta para la presión de las llantas de una motocicleta. Si la presión está por debajo de 28 psi, el programa debe indicar «Presión baja». Si está entre 28 y 32 psi, indica «Presión óptima». Si supera los 32 psi, advierte «Presión alta».</p>
+<p>Descuentos en facturación: Crea un programa que calcule el total a pagar en la cuenta de un restaurante. Si la cuenta supera los $100.000, aplica un 10% de descuento. Adicionalmente, si el usuario indica mediante una variable booleana que es «cliente frecuente», aplica un 5% extra sobre el valor que ya tiene el primer descuento.</p>
+<p>Categorización de datos: Un algoritmo debe etiquetar un tumor según su tamaño en centímetros. Si mide menos de 2 cm, se clasifica como «T1». Si mide entre 2 cm y 5 cm, es «T2». Si mide más de 5 cm, es «T3». Escribe el código que solicite la medida y muestre la etiqueta correspondiente.</p>
+<p>Año bisiesto: Escribe un programa que solicite un año al usuario y determine si es bisiesto. La regla matemática es: un año es bisiesto si es divisible entre 4, excepto si es divisible entre 100, a menos que también sea divisible entre 400.</p>
+<p>Desarrolle una calculadora</p>
+<p>Desarrolle un menu de una tienda</p>
+</section>
+</section>
+<section id="listas-colecciones-de-datos">
+<h2>Listas (Colecciones de Datos)<a class="headerlink" href="#listas-colecciones-de-datos" title="Link to this heading">#</a></h2>
+<p>En Python, una <strong>lista</strong> (en inglés, <code class="docutils literal notranslate"><span class="pre">list</span></code>) es un contenedor que te permite almacenar múltiples valores en una sola variable. Las listas son una de las estructuras de datos más fundamentales.</p>
+<ul class="simple">
+<li><p>Se definen usando corchetes <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p></li>
+<li><p>Los elementos se separan por comas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p></li>
+<li><p>Pueden contener diferentes tipos de datos (números, strings, etc.), aunque lo más común es que todos sean del mismo tipo.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Una lista vacía</span>
+<span class="n">lista_vacia</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_vacia</span><span class="p">)</span>
+
+<span class="c1"># Una lista de números</span>
+<span class="n">calificaciones</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span>
+
+<span class="c1"># Una lista de textos (strings)</span>
+<span class="n">compras</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Leche&quot;</span><span class="p">,</span> <span class="s2">&quot;Huevos&quot;</span><span class="p">,</span> <span class="s2">&quot;Pan&quot;</span><span class="p">,</span> <span class="s2">&quot;Manzanas&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">compras</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># Una lista mixta (es posible, pero menos común)</span>
+<span class="n">mixta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mixta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+[10, 9, 7, 8, 10]
+Leche
+[1, &#39;Hola&#39;, True, 3.14]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="accediendo-a-elementos-indices">
+<h3>Accediendo a Elementos (Índices)<a class="headerlink" href="#accediendo-a-elementos-indices" title="Link to this heading">#</a></h3>
+<p>Puedes acceder a un elemento específico de la lista usando su <strong>índice</strong> (su posición).</p>
+<p><strong>¡MUY IMPORTANTE!</strong> En Python, los índices <strong>empiezan a contar desde 0</strong>.</p>
+<ul class="simple">
+<li><p>El primer elemento está en el índice <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>El segundo elemento está en el índice <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>…y así sucesivamente.</p></li>
+</ul>
+<p>También puedes usar índices negativos. <code class="docutils literal notranslate"><span class="pre">[-1]</span></code> siempre te dará el <strong>último</strong> elemento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Manzana&quot;</span><span class="p">,</span> <span class="s2">&quot;Banana&quot;</span><span class="p">,</span> <span class="s2">&quot;Cereza&quot;</span><span class="p">,</span> <span class="s2">&quot;Naranja&quot;</span><span class="p">]</span>
+<span class="c1"># Índices:   0          1         2         3</span>
+
+<span class="c1"># Acceder al primer elemento (índice 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primera fruta:&quot;</span><span class="p">,</span> <span class="n">frutas</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Acceder al tercer elemento (índice 2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tercera fruta:&quot;</span><span class="p">,</span> <span class="n">frutas</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># Acceder al último elemento (índice -1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Última fruta:&quot;</span><span class="p">,</span> <span class="n">frutas</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Acceder al penúltimo elemento (índice -2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Penúltima fruta:&quot;</span><span class="p">,</span> <span class="n">frutas</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Primera fruta: Manzana
+Tercera fruta: Cereza
+Última fruta: Naranja
+Penúltima fruta: Cereza
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modificando-elementos">
+<h3>Modificando Elementos<a class="headerlink" href="#modificando-elementos" title="Link to this heading">#</a></h3>
+<p>Las listas son <strong>mutables</strong>, lo que significa que puedes cambiar sus elementos después de haberlas creado. Solo tienes que seleccionar el índice y asignarle un nuevo valor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colores</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rojo&quot;</span><span class="p">,</span> <span class="s2">&quot;Verde&quot;</span><span class="p">,</span> <span class="s2">&quot;Azul&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista original:&quot;</span><span class="p">,</span> <span class="n">colores</span><span class="p">)</span>
+
+<span class="c1"># Cambiemos &quot;Verde&quot; (índice 1) por &quot;Amarillo&quot;</span>
+<span class="n">colores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Amarillo&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista modificada:&quot;</span><span class="p">,</span> <span class="n">colores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lista original: [&#39;Rojo&#39;, &#39;Verde&#39;, &#39;Azul&#39;]
+Lista modificada: [&#39;Rojo&#39;, &#39;Amarillo&#39;, &#39;Azul&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="anadiendo-y-eliminando-elementos">
+<h3>Añadiendo y Eliminando Elementos<a class="headerlink" href="#anadiendo-y-eliminando-elementos" title="Link to this heading">#</a></h3>
+<p>Las operaciones más comunes son añadir al final y eliminar elementos.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.append(elemento)</span></code>: Añade un elemento al <strong>final</strong> de la lista.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.pop()</span></code>: Elimina y devuelve el <strong>último</strong> elemento de la lista.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">invitados</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;Beto&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invitados:&quot;</span><span class="p">,</span> <span class="n">invitados</span><span class="p">)</span>
+
+<span class="c1"># Añadimos a Carlos al final</span>
+<span class="n">invitados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Carlos&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Añadimos a Carlos:&quot;</span><span class="p">,</span> <span class="n">invitados</span><span class="p">)</span>
+
+<span class="c1"># Añadimos a Diana al final</span>
+<span class="n">invitados</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Diana&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Añadimos a Diana:&quot;</span><span class="p">,</span> <span class="n">invitados</span><span class="p">)</span>
+
+<span class="c1"># Se va el último que llegó (Diana)</span>
+<span class="n">ultimo_en_irse</span> <span class="o">=</span> <span class="n">invitados</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Se fue:&quot;</span><span class="p">,</span> <span class="n">ultimo_en_irse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quedan:&quot;</span><span class="p">,</span> <span class="n">invitados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invitados: [&#39;Ana&#39;, &#39;Beto&#39;]
+Añadimos a Carlos: [&#39;Ana&#39;, &#39;Beto&#39;, &#39;Carlos&#39;]
+Añadimos a Diana: [&#39;Ana&#39;, &#39;Beto&#39;, &#39;Carlos&#39;, &#39;Diana&#39;]
+Se fue: Diana
+Quedan: [&#39;Ana&#39;, &#39;Beto&#39;, &#39;Carlos&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="listas-y-bucles-for-la-combinacion-perfecta">
+<h3>Listas y Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> (¡La combinación perfecta!)<a class="headerlink" href="#listas-y-bucles-for-la-combinacion-perfecta" title="Link to this heading">#</a></h3>
+<p>Ahora sí, el bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> es la herramienta ideal para trabajar con listas. Puedes usarlo para «recorrer» la lista y hacer algo con cada elemento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># &#39;num&#39; tomará el valor de cada elemento de la lista, uno por uno</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="c1">#suma = suma + num</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La suma total es:&quot;</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola
+1.5
+True
+3.5
+50
+La suma total es: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo: Poner en mayúsculas una lista de nombres</span>
+<span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;juan&quot;</span><span class="p">,</span> <span class="s2">&quot;maría&quot;</span><span class="p">,</span> <span class="s2">&quot;pedro&quot;</span><span class="p">]</span>
+<span class="n">nombres_mayuscula</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Creamos una lista vacía</span>
+
+<span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">nombres</span><span class="p">:</span>
+    <span class="n">nombres_mayuscula</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">nombre</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="p">)</span> <span class="c1"># .upper() es un método de strings</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nombres originales:&quot;</span><span class="p">,</span> <span class="n">nombres</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nombres en mayúsculas:&quot;</span><span class="p">,</span> <span class="n">nombres_mayuscula</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombres originales: [&#39;juan&#39;, &#39;maría&#39;, &#39;pedro&#39;]
+Nombres en mayúsculas: [&#39;JUAN&#39;, &#39;MARÍA&#39;, &#39;PEDRO&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funciones-utiles-para-listas">
+<h3>Funciones Útiles para Listas<a class="headerlink" href="#funciones-utiles-para-listas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len(lista)</span></code>: Devuelve el <strong>número de elementos</strong> (la longitud) de la lista.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elemento</span> <span class="pre">in</span> <span class="pre">lista</span></code>: Devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si el elemento existe en la lista, o <code class="docutils literal notranslate"><span class="pre">False</span></code> si no.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mi_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+
+<span class="c1"># Longitud de la lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Longitud:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">))</span> <span class="c1"># Tiene 4 elementos</span>
+
+<span class="c1"># Revisar si un elemento existe (muy útil con &#39;if&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿Está el 10 en la lista?&quot;</span><span class="p">,</span> <span class="mi">10</span> <span class="ow">in</span> <span class="n">mi_lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿Está el 99 en la lista?&quot;</span><span class="p">,</span> <span class="mi">99</span> <span class="ow">in</span> <span class="n">mi_lista</span><span class="p">)</span>
+
+<span class="c1"># Usándolo en un condicional</span>
+<span class="k">if</span> <span class="mi">15</span> <span class="ow">in</span> <span class="n">mi_lista</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sí, el 15 está en la colección.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Longitud: 4
+¿Está el 10 en la lista? True
+¿Está el 99 en la lista? False
+Sí, el 15 está en la colección.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejercicios-de-practica">
+<h2>Ejercicios de Práctica<a class="headerlink" href="#ejercicios-de-practica" title="Link to this heading">#</a></h2>
+<section id="ejercicio-1-filtrado-de-numeros-pares">
+<h3>Ejercicio 1: Filtrado de Números Pares<a class="headerlink" href="#ejercicio-1-filtrado-de-numeros-pares" title="Link to this heading">#</a></h3>
+<p>Dada una lista de números, crea una nueva lista que contenga <strong>únicamente</strong> los números pares de la lista original.</p>
+<p><strong>Pistas:</strong></p>
+<ol class="arabic simple">
+<li><p>Crea una lista vacía llamada <code class="docutils literal notranslate"><span class="pre">pares</span></code>.</p></li>
+<li><p>Usa un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> para recorrer la lista <code class="docutils literal notranslate"><span class="pre">numeros_mezclados</span></code>.</p></li>
+<li><p>Dentro del bucle, usa un <code class="docutils literal notranslate"><span class="pre">if</span></code> para verificar si el número es par. (Recuerda el operador módulo <code class="docutils literal notranslate"><span class="pre">%</span></code>).</p></li>
+<li><p>Si el número es par, añádelo a la lista <code class="docutils literal notranslate"><span class="pre">pares</span></code> usando <code class="docutils literal notranslate"><span class="pre">.append()</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de entrada</span>
+<span class="n">numeros_mezclados</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+
+<span class="c1"># --- Escribe tu código aquí ---</span>
+<span class="n">pares</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeros_mezclados</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">pares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<span class="c1"># --- Fin de tu código ---</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista original:&quot;</span><span class="p">,</span> <span class="n">numeros_mezclados</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Números pares:&quot;</span><span class="p">,</span> <span class="n">pares</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lista original: [1, 4, 7, 10, 13, 16, 18, 21, 22]
+Números pares: [4, 10, 16, 18, 22]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-2-contador-de-vocales">
+<h3>Ejercicio 2: Contador de Vocales<a class="headerlink" href="#ejercicio-2-contador-de-vocales" title="Link to this heading">#</a></h3>
+<p>Dada una palabra (un string), cuenta cuántas vocales (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>) contiene.</p>
+<p><strong>Notas:</strong></p>
+<ul class="simple">
+<li><p>Recuerda que puedes usar un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> para recorrer un string.</p></li>
+<li><p>Este ejercicio <em>no</em> distingue entre mayúsculas y minúsculas (puedes usar el método <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> en el string para simplificar).</p></li>
+</ul>
+<p><strong>Pistas:</strong></p>
+<ol class="arabic simple">
+<li><p>Define un <code class="docutils literal notranslate"><span class="pre">contador</span></code> y ponlo en 0.</p></li>
+<li><p>Define el string <code class="docutils literal notranslate"><span class="pre">palabra</span></code>.</p></li>
+<li><p>Usa un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> para recorrer cada <code class="docutils literal notranslate"><span class="pre">letra</span></code> de la <code class="docutils literal notranslate"><span class="pre">palabra</span></code>. (Es útil convertir la <code class="docutils literal notranslate"><span class="pre">palabra</span></code> a minúsculas antes del bucle).</p></li>
+<li><p>Dentro del bucle, usa un <code class="docutils literal notranslate"><span class="pre">if</span></code> para verificar si la <code class="docutils literal notranslate"><span class="pre">letra</span></code> es “a”, “e”, “i”, “o”, “u”. (Puedes usar el operador <code class="docutils literal notranslate"><span class="pre">or</span></code> o el operador <code class="docutils literal notranslate"><span class="pre">in</span></code> con una lista/string de vocales).</p></li>
+<li><p>Si es una vocal, incrementa el <code class="docutils literal notranslate"><span class="pre">contador</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s2">&quot;Aguapanela&quot;</span> <span class="c1"># Debería encontrar 5 vocales</span>
+<span class="n">contador_vocales</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">vocales</span> <span class="o">=</span> <span class="s2">&quot;aeiou&quot;</span>
+
+<span class="c1"># --- Escribe tu código aquí ---</span>
+<span class="n">palabra_minuscula</span><span class="o">=</span><span class="n">palabra</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">palabra_minuscula</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">vocales</span><span class="p">:</span>
+    <span class="n">contador_vocales</span><span class="o">+=</span><span class="mi">1</span>
+<span class="c1"># --- Fin de tu código ---</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La palabra es:&quot;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número de vocales:&quot;</span><span class="p">,</span> <span class="n">contador_vocales</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La palabra es: Aguapanela
+Número de vocales: 6
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="funciones">
@@ -1575,6 +1903,230 @@ Hola Juan, tienes (o cumplirás) 75 años en 2025.
 </div>
 </section>
 </section>
+<section id="diccionarios">
+<h2>Diccionarios<a class="headerlink" href="#diccionarios" title="Link to this heading">#</a></h2>
+<p>Los <strong>diccionarios</strong> (en inglés, <code class="docutils literal notranslate"><span class="pre">dict</span></code>) son la segunda estructura de datos más importante de Python, después de las listas.</p>
+<p>La diferencia clave es:</p>
+<ul class="simple">
+<li><p>Las <strong>Listas</strong> se organizan por un <strong>índice numérico</strong> (0, 1, 2, …).</p></li>
+<li><p>Los <strong>Diccionarios</strong> se organizan por una <strong>clave</strong> (en inglés, «key»).</p></li>
+</ul>
+<p>Piensa en un diccionario real: no buscas la palabra 500, buscas la palabra «Python». Aquí es igual. Usamos una «clave» (que suele ser un string) para guardar y encontrar un «valor».</p>
+<p>Se definen con llaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> y usan el formato <code class="docutils literal notranslate"><span class="pre">clave:</span> <span class="pre">valor</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un diccionario vacío</span>
+<span class="n">diccionario_vacio</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diccionario_vacio</span><span class="p">)</span>
+
+<span class="c1"># Un diccionario simple</span>
+<span class="c1"># La clave es el string (ej. &quot;nombre&quot;) y el valor es lo que sigue (ej. &quot;Ana&quot;)</span>
+<span class="n">persona</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;ciudad&quot;</span><span class="p">:</span> <span class="s2">&quot;Madrid&quot;</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+Ana
+</pre></div>
+</div>
+</div>
+</div>
+<section id="accediendo-a-los-valores">
+<h3>Accediendo a los Valores<a class="headerlink" href="#accediendo-a-los-valores" title="Link to this heading">#</a></h3>
+<p>Para obtener un valor, <strong>no usamos un índice numérico</strong>, usamos su <strong>clave</strong> entre corchetes <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">persona</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;ciudad&quot;</span><span class="p">:</span> <span class="s2">&quot;Madrid&quot;</span>
+    <span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="s2">&quot;hola&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Accedemos al valor asociado con la clave &quot;nombre&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nombre:&quot;</span><span class="p">,</span> <span class="n">persona</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">])</span>
+
+<span class="c1"># Accedemos al valor de la clave &quot;edad&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Edad:&quot;</span><span class="p">,</span> <span class="n">persona</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">])</span>
+
+<span class="c1"># Esto daría un error, ¡los diccionarios no usan índices!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombre: Ana
+Edad: 30
+hola
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="anadir-y-modificar-elementos">
+<h3>Añadir y Modificar Elementos<a class="headerlink" href="#anadir-y-modificar-elementos" title="Link to this heading">#</a></h3>
+<p>Añadir un nuevo par (clave-valor) o modificar uno existente es muy fácil. Simplemente asigna un valor a una clave.</p>
+<ul class="simple">
+<li><p>Si la clave <strong>ya existe</strong>, su valor se actualiza.</p></li>
+<li><p>Si la clave <strong>no existe</strong>, se crea un nuevo par clave-valor.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">persona</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;ciudad&quot;</span><span class="p">:</span> <span class="s2">&quot;Madrid&quot;</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original:&quot;</span><span class="p">,</span> <span class="n">persona</span><span class="p">)</span>
+
+<span class="c1"># 1. Modificar un valor existente</span>
+<span class="c1"># Cambiamos la clave &quot;edad&quot; de 30 a 31</span>
+<span class="n">persona</span><span class="p">[</span><span class="s2">&quot;edad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modificado:&quot;</span><span class="p">,</span> <span class="n">persona</span><span class="p">)</span>
+
+<span class="c1"># 2. Añadir un nuevo par clave-valor</span>
+<span class="c1"># La clave &quot;profesion&quot; no existía, así que se añade</span>
+<span class="n">persona</span><span class="p">[</span><span class="s2">&quot;profesion&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Ingeniera&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Añadido:&quot;</span><span class="p">,</span> <span class="n">persona</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original: {&#39;nombre&#39;: &#39;Ana&#39;, &#39;edad&#39;: 30, &#39;ciudad&#39;: &#39;Madrid&#39;}
+Modificado: {&#39;nombre&#39;: &#39;Ana&#39;, &#39;edad&#39;: 31, &#39;ciudad&#39;: &#39;Madrid&#39;}
+Añadido: {&#39;nombre&#39;: &#39;Ana&#39;, &#39;edad&#39;: 31, &#39;ciudad&#39;: &#39;Madrid&#39;, &#39;profesion&#39;: &#39;Ingeniera&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eliminar-elementos-y-verificar-existencia">
+<h3>Eliminar Elementos y Verificar Existencia<a class="headerlink" href="#eliminar-elementos-y-verificar-existencia" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.pop(clave)</span></code>: Elimina el par clave-valor y devuelve el valor. (Similar a listas, pero debes pasarle la clave).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clave</span> <span class="pre">in</span> <span class="pre">diccionario</span></code>: Verifica si una <strong>clave</strong> existe en el diccionario. Devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(diccionario)</span></code>: Devuelve el número de pares (clave-valor) que tiene.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">persona</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="s2">&quot;felipe&quot;</span><span class="p">,</span><span class="s2">&quot;juan jose&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">32</span><span class="p">],</span>
+    <span class="s2">&quot;ciudad&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Madrid&quot;</span><span class="p">,</span><span class="s2">&quot;Madrid&quot;</span><span class="p">,</span><span class="s2">&quot;Madrid&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;profesion&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ingeniera&quot;</span><span class="p">,</span><span class="s2">&quot;mecanica&quot;</span><span class="p">,</span> <span class="s2">&quot;diseño&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Longitud</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nº de elementos:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">persona</span><span class="p">))</span>
+
+<span class="c1"># Verificar si la clave &quot;ciudad&quot; existe</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿Tiene &#39;ciudad&#39;?&quot;</span><span class="p">,</span> <span class="s2">&quot;ciudad&quot;</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">)</span>
+<span class="c1"># Verificar si la clave &quot;email&quot; existe</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿Tiene &#39;email&#39;?&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">)</span>
+
+<span class="c1"># Usando &#39;in&#39; con un &#39;if&#39;</span>
+<span class="k">if</span> <span class="s2">&quot;nombre&quot;</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La persona tiene un nombre guardado.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Eliminar un elemento</span>
+<span class="n">valor_eliminado</span> <span class="o">=</span> <span class="n">persona</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;ciudad&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Se eliminó la ciudad: </span><span class="si">{</span><span class="n">valor_eliminado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diccionario final:&quot;</span><span class="p">,</span> <span class="n">persona</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nº de elementos: 4
+¿Tiene &#39;ciudad&#39;? True
+¿Tiene &#39;email&#39;? False
+La persona tiene un nombre guardado.
+Se eliminó la ciudad: [&#39;Madrid&#39;, &#39;Madrid&#39;, &#39;Madrid&#39;]
+Diccionario final: {&#39;nombre&#39;: [&#39;Ana&#39;, &#39;felipe&#39;, &#39;juan jose&#39;], &#39;edad&#39;: [31, 31, 32], &#39;profesion&#39;: [&#39;Ingeniera&#39;, &#39;mecanica&#39;, &#39;diseño&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">persona</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;felipe&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="recorriendo-diccionarios-con-bucles-for">
+<h3>Recorriendo Diccionarios con Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#recorriendo-diccionarios-con-bucles-for" title="Link to this heading">#</a></h3>
+<p>Hay dos formas principales de recorrer un diccionario.</p>
+<ol class="arabic simple">
+<li><p>Recorrer solo las <strong>claves</strong>.</p></li>
+<li><p>Recorrer tanto las <strong>claves</strong> como los <strong>valores</strong> (la más común).</p></li>
+</ol>
+<p>Para recorrer ambos, usamos el método <code class="docutils literal notranslate"><span class="pre">.items()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">persona</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+    <span class="s2">&quot;profesion&quot;</span><span class="p">:</span> <span class="s2">&quot;Ingeniera&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># 1. Recorrer solo las claves (comportamiento por defecto)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Recorriendo Claves ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">clave</span> <span class="ow">in</span> <span class="n">persona</span><span class="p">:</span>
+    <span class="c1"># &#39;clave&#39; tomará el valor &quot;nombre&quot;, luego &quot;edad&quot;, luego &quot;profesion&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La clave es: </span><span class="si">{</span><span class="n">clave</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Podemos usar la clave para obtener el valor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El valor es: </span><span class="si">{</span><span class="n">persona</span><span class="p">[</span><span class="n">clave</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Recorrer Clave y Valor (¡La forma preferida!)</span>
+<span class="c1"># Usamos .items() y dos variables en el bucle</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Recorriendo Claves y Valores con .items() ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">clave</span><span class="p">,</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">persona</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">clave</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Recorriendo Claves ---
+La clave es: nombre
+El valor es: Ana
+La clave es: edad
+El valor es: 31
+La clave es: profesion
+El valor es: Ingeniera
+
+--- Recorriendo Claves y Valores con .items() ---
+nombre: Ana
+edad: 31
+profesion: Ingeniera
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Dic_portatiles_ktronix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;HP&quot;</span><span class="p">:[</span><span class="s2">&quot;Victus1&quot;</span><span class="p">,</span><span class="s2">&quot;Vitus2&quot;</span><span class="p">],</span>
+                        <span class="s2">&quot;Asus&quot;</span><span class="p">:[</span><span class="s2">&quot;TUF&quot;</span><span class="p">,</span><span class="s2">&quot;ROG&quot;</span><span class="p">,</span><span class="s2">&quot;VivoBook&quot;</span><span class="p">],</span>
+                        <span class="s2">&quot;Lenovo&quot;</span><span class="p">:[</span><span class="s2">&quot;Ideapad&quot;</span><span class="p">,</span><span class="s2">&quot;Thinkpad&quot;</span><span class="p">,</span><span class="s2">&quot;Yoga&quot;</span><span class="p">],</span>
+                        <span class="s2">&quot;Mac&quot;</span><span class="p">:[</span><span class="s2">&quot;Pro&quot;</span><span class="p">,</span><span class="s2">&quot;mini&quot;</span><span class="p">,</span><span class="s2">&quot;air&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="manejo-de-errores-try-except">
 <h2>Manejo de Errores (try / except)<a class="headerlink" href="#manejo-de-errores-try-except" title="Link to this heading">#</a></h2>
 <p>Cuando programamos, no todo sale bien. A veces el usuario introduce datos incorrectos, un archivo no se encuentra o intentamos dividir por cero.</p>
@@ -1761,6 +2313,120 @@ Adivina el número: 45.2
 </div>
 </div>
 </section>
+<section id="ejercicio-2-lista-de-compras-interactiva">
+<h2>Ejercicio 2: Lista de Compras Interactiva<a class="headerlink" href="#ejercicio-2-lista-de-compras-interactiva" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> Combinar <code class="docutils literal notranslate"><span class="pre">listas</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code> y <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Crea un programa que permita al usuario construir una lista de compras.</p>
+<ol class="arabic simple">
+<li><p>Crea una lista vacía llamada <code class="docutils literal notranslate"><span class="pre">lista_compras</span></code>.</p></li>
+<li><p>Usa un bucle <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> para preguntar al usuario qué item quiere añadir.</p></li>
+<li><p>Si el usuario escribe «FIN» (en mayúsculas o minúsculas), el bucle debe terminar (<code class="docutils literal notranslate"><span class="pre">break</span></code>).</p></li>
+<li><p>Cualquier otra cosa que escriba se debe añadir a la <code class="docutils literal notranslate"><span class="pre">lista_compras</span></code> usando <code class="docutils literal notranslate"><span class="pre">.append()</span></code>.</p></li>
+<li><p><strong>Al final del bucle</strong>, el programa debe imprimir «Tu lista de compras es:» y luego mostrar cada item de la lista (usando un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Crear lista vacía</span>
+<span class="n">lista_compras</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Crea tu lista de compras. Escribe &#39;FIN&#39; para terminar.&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Escribe tu código aquí ---</span>
+
+
+
+<span class="c1"># --- Fin de tu código ---</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crea tu lista de compras. Escribe &#39;FIN&#39; para terminar.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-3-funcion-de-busqueda-en-diccionario">
+<h2>Ejercicio 3: Función de Búsqueda en Diccionario<a class="headerlink" href="#ejercicio-3-funcion-de-busqueda-en-diccionario" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> Combinar <code class="docutils literal notranslate"><span class="pre">funciones</span> <span class="pre">(def)</span></code>, <code class="docutils literal notranslate"><span class="pre">diccionarios</span></code> y <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Crea un diccionario llamado <code class="docutils literal notranslate"><span class="pre">capitales</span></code> que almacene algunos países como claves y sus capitales como valores (ej. <code class="docutils literal notranslate"><span class="pre">&quot;Colombia&quot;:</span> <span class="pre">&quot;Bogotá&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Francia&quot;:</span> <span class="pre">&quot;París&quot;</span></code>).</p></li>
+<li><p>Crea una <strong>función</strong> llamada <code class="docutils literal notranslate"><span class="pre">obtener_capital(pais)</span></code> que reciba un país (string) como parámetro.</p></li>
+<li><p>Dentro de la función:</p>
+<ul class="simple">
+<li><p>Debe verificar si el <code class="docutils literal notranslate"><span class="pre">pais</span></code> <strong>existe como clave</strong> en el diccionario <code class="docutils literal notranslate"><span class="pre">capitales</span></code> (usando <code class="docutils literal notranslate"><span class="pre">in</span></code>).</p></li>
+<li><p>Si existe, la función debe <code class="docutils literal notranslate"><span class="pre">return</span></code> (devolver) la capital.</p></li>
+<li><p>Si no existe, debe <code class="docutils literal notranslate"><span class="pre">return</span></code> (devolver) un string que diga: «No conozco esa capital.»</p></li>
+</ul>
+</li>
+<li><p>Fuera de la función, pide al usuario que ingrese un país usando <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p></li>
+<li><p>Llama a tu función <code class="docutils literal notranslate"><span class="pre">obtener_capital()</span></code> con el país del usuario e imprime el resultado que te devolvió.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Crear el diccionario</span>
+<span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Colombia&quot;</span><span class="p">:</span> <span class="s2">&quot;Bogotá&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Argentina&quot;</span><span class="p">:</span> <span class="s2">&quot;Buenos Aires&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Francia&quot;</span><span class="p">:</span> <span class="s2">&quot;París&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Japón&quot;</span><span class="p">:</span> <span class="s2">&quot;Tokio&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># 2. Definir la función</span>
+    <span class="c1"># --- Fin del código de la función ---</span>
+
+
+<span class="c1"># 4. Pedir input al usuario</span>
+
+<span class="c1"># 5. Llamar la función e imprimir el resultado</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-4-desafio-mini-sistema-de-calificaciones">
+<h2>Ejercicio 4 (Desafío): Mini-Sistema de Calificaciones<a class="headerlink" href="#ejercicio-4-desafio-mini-sistema-de-calificaciones" title="Link to this heading">#</a></h2>
+<p><strong>Objetivo:</strong> Combinar <strong>TODO</strong>: <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code>, <code class="docutils literal notranslate"><span class="pre">try/except</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Crea un programa que guarda las calificaciones de varios estudiantes.</p>
+<ol class="arabic simple">
+<li><p>Crea un diccionario vacío llamado <code class="docutils literal notranslate"><span class="pre">boletin</span></code>. La <strong>clave</strong> será el nombre del estudiante (string) y el <strong>valor</strong> será una <strong>lista</strong> de sus calificaciones (números).</p>
+<ul class="simple">
+<li><p>Ejemplo: <code class="docutils literal notranslate"><span class="pre">{&quot;Ana&quot;:</span> <span class="pre">[5.0,</span> <span class="pre">4.5],</span> <span class="pre">&quot;Beto&quot;:</span> <span class="pre">[3.0,</span> <span class="pre">4.0,</span> <span class="pre">3.8]}</span></code></p></li>
+</ul>
+</li>
+<li><p>Crea una función <code class="docutils literal notranslate"><span class="pre">mostrar_promedio(nombre_estudiante)</span></code> que reciba un nombre, busque sus calificaciones en el <code class="docutils literal notranslate"><span class="pre">boletin</span></code>, calcule el promedio y lo imprima. (Ayuda: <code class="docutils literal notranslate"><span class="pre">sum(lista)</span></code> te da la suma de una lista, y <code class="docutils literal notranslate"><span class="pre">len(lista)</span></code> la cantidad de items).</p></li>
+<li><p>Crea un bucle <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> para el menú principal:</p>
+<ul class="simple">
+<li><p>Pregunta al usuario: «1. Añadir calificación» o «2. Salir».</p></li>
+<li><p>Si elige «2», usa <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p></li>
+<li><p>Si elige «1»:</p>
+<ul>
+<li><p>Pide el nombre del estudiante (<code class="docutils literal notranslate"><span class="pre">nombre</span></code>).</p></li>
+<li><p>Si el <code class="docutils literal notranslate"><span class="pre">nombre</span></code> <strong>no está</strong> en el <code class="docutils literal notranslate"><span class="pre">boletin</span></code>, créalo: <code class="docutils literal notranslate"><span class="pre">boletin[nombre]</span> <span class="pre">=</span> <span class="pre">[]</span></code>.</p></li>
+<li><p>Pide la calificación (<code class="docutils literal notranslate"><span class="pre">nota</span></code>) usando <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p></li>
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">try/except</span></code> para asegurarte de que la <code class="docutils literal notranslate"><span class="pre">nota</span></code> sea un <code class="docutils literal notranslate"><span class="pre">float()</span></code>. Si no, muestra un error.</p></li>
+<li><p>Si la nota es válida, añádela a la lista del estudiante: <code class="docutils literal notranslate"><span class="pre">boletin[nombre].append(nota)</span></code>.</p></li>
+<li><p>Muestra el boletín actualizado: <code class="docutils literal notranslate"><span class="pre">print(boletin)</span></code>.</p></li>
+<li><p>Llama a la función <code class="docutils literal notranslate"><span class="pre">mostrar_promedio(nombre)</span></code> para ese estudiante.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Diccionario vacío</span>
+<span class="n">boletin</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># 2. Función para promedio</span>
+
+
+<span class="c1"># 3. Bucle principal (Menú)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>#Matrices</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1818,7 +2484,6 @@ Adivina el número: 45.2
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-variables-en-python">Tipos de Variables en Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-numericos">Tipos Numéricos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enteros-int">Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
 </ul>
@@ -1852,6 +2517,19 @@ Adivina el número: 45.2
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlando-el-bucle-break-y-continue">3. Controlando el Bucle: <code class="docutils literal notranslate"><span class="pre">break</span></code> y <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-colecciones-de-datos">Listas (Colecciones de Datos)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-elementos-indices">Accediendo a Elementos (Índices)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificando-elementos">Modificando Elementos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadiendo-y-eliminando-elementos">Añadiendo y Eliminando Elementos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-y-bucles-for-la-combinacion-perfecta">Listas y Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> (¡La combinación perfecta!)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-utiles-para-listas">Funciones Útiles para Listas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-practica">Ejercicios de Práctica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-filtrado-de-numeros-pares">Ejercicio 1: Filtrado de Números Pares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-contador-de-vocales">Ejercicio 2: Contador de Vocales</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-mas-simple-definir-y-llamar">1. La Función más simple (Definir y Llamar)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-inputs">2. Parámetros (Inputs)</a></li>
@@ -1865,12 +2543,22 @@ Adivina el número: 45.2
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-practico-uniendo-todo">Ejemplo Práctico: Uniendo todo</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios">Diccionarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-valores">Accediendo a los Valores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-y-modificar-elementos">Añadir y Modificar Elementos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-elementos-y-verificar-existencia">Eliminar Elementos y Verificar Existencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recorriendo-diccionarios-con-bucles-for">Recorriendo Diccionarios con Bucles <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-errores-try-except">Manejo de Errores (try / except)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-estructura-try-except">La Estructura <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poniendo-todo-junto-un-bucle-while-para-forzar-un-input-correcto">Poniendo todo junto: Un Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> para Forzar un Input Correcto</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-adivina-el-numero">Ejercicio 1: Adivina el Número</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-lista-de-compras-interactiva">Ejercicio 2: Lista de Compras Interactiva</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-funcion-de-busqueda-en-diccionario">Ejercicio 3: Función de Búsqueda en Diccionario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4-desafio-mini-sistema-de-calificaciones">Ejercicio 4 (Desafío): Mini-Sistema de Calificaciones</a></li>
 </ul>
   </nav></div>
 
