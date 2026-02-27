@@ -1346,13 +1346,24 @@ y multiplo de 3
 <span class="s2">    5. para salir      &quot;&quot;&quot;</span><span class="p">)</span>
     <span class="n">opcion</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ingrese la opcion: &quot;</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">opcion</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">numero1</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un numero &quot;</span><span class="p">))</span>
-        <span class="n">numero2</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un numero &quot;</span><span class="p">))</span>
+      <span class="n">suma</span><span class="o">=</span><span class="kc">True</span>
+      <span class="k">while</span> <span class="n">suma</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="n">numero1</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Desea ingresar un numero 1 para si 2 para no&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">numero1</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+          <span class="n">numero1</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un numero &quot;</span><span class="p">))</span>
+          <span class="n">total</span><span class="o">=</span><span class="n">numero1</span><span class="o">+</span><span class="n">total</span>
+        <span class="k">if</span> <span class="n">numero1</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Su suma fue igual a &quot;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+          <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;opcion incorrecta&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;su suma es&quot;</span> <span class="p">,</span><span class="n">numero1</span><span class="o">+</span><span class="n">numero2</span> <span class="p">)</span>
     <span class="k">elif</span> <span class="n">opcion</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span> 
-        <span class="n">numero1</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un numero &quot;</span><span class="p">))</span>
-        <span class="n">numero2</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un numero &quot;</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;su resta es&quot;</span> <span class="p">,</span><span class="n">numero1</span><span class="o">-</span><span class="n">numero2</span> <span class="p">)</span>
+      <span class="n">cantidad</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Cuantos numeros desea restar&quot;</span><span class="p">))</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cantidad</span><span class="p">):</span>
+        <span class="n">numero1</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese el numero &quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;: &quot;</span><span class="p">))</span>
+        <span class="n">resta</span><span class="o">=</span><span class="n">resta</span><span class="o">-</span><span class="n">numero1</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Su resta es: &quot;</span><span class="p">,</span> <span class="n">resta</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">opcion</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span> 
         <span class="n">numero1</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un numero &quot;</span><span class="p">))</span>
         <span class="n">numero2</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese un numero &quot;</span><span class="p">))</span>
@@ -1369,10 +1380,14 @@ y multiplo de 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="k">while</span> <span class="n">encender</span><span class="o">==</span><span class="kc">True</span>
-                        <span class="o">^</span>
-<span class="ne">SyntaxError</span>: expected &#39;:&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Señor usuario bienvenido al mejor sistema de calculadora del mundo 
+    Que Operación desea realizar? 
+    Peresione el botón que necesite 
+    1. para suma 
+    2. Resta 
+    3. Multiplicación 
+    4. Division 
+    5. para salir      
 </pre></div>
 </div>
 </div>
