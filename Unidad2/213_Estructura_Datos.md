@@ -21,7 +21,7 @@ print(sucursales[0])  # Salida: Norte
 # Agregar una nueva sucursal al final de la lista
 sucursales.append("Centro")
 ```
-<img src="_static/images/2-python-listas.png" width="600" />
+<img src="../_static/images/2-python-listas.png" width="600" />
 
 ---
 
@@ -44,7 +44,7 @@ producto = {
 # Acceder a un valor mediante su clave específica
 print(producto["nombre"])  # Salida: Teclado Mecánico
 ```
-<img src="_static/images/2-python-diccionarios.png" width="600" />
+<img src="../_static/images/2-python-diccionarios.png" width="600" />
 
 ---
 
@@ -63,6 +63,6 @@ empleados = [
 for emp in empleados:
     print(f"Empleado: {emp['nombre']} | Cargo: {emp['cargo']}")
 ```
-<img src="_static/images/2-python-estructuras-complejas.png" width="600" />
+<img src="../_static/images/2-python-estructuras-complejas.png" width="600" />
 
 ---
