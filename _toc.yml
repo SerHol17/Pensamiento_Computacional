@@ -17,3 +17,7 @@ chapters:
   - file: Unidad2/Taller_Corte1.md
   - file: Unidad2/Certificado_electoral.md
   - file: Unidad2/Certificados_cursos.md
+- file: Unidad3
+  sections:
+  - file: Unidad3/unidad31.md
+  - file: Unidad3/Pandas.ipynb
