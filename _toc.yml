@@ -21,3 +21,5 @@ chapters:
   sections:
   - file: Unidad3/unidad31.md
   - file: Unidad3/Pandas.ipynb
+  - file: Unidad3/31Rgrecion.md
+  - file: Unidad3/c.ipynb
