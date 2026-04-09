@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unidad 3: Herramientas Computacionales para la Automatización &#8212; Pensamiento computacional - 01 Ucaldas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Unidad3';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="3.1 Programación básica aplicada a la solución de problemas" href="Unidad3/unidad31.html" />
+    <link rel="prev" title="Gracias por realizar el material de apoyo!!" href="Unidad2/Certificados_cursos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-light" alt="Pensamiento computacional - 01 Ucaldas - Home"/>
+    <script>document.write(`<img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-dark" alt="Pensamiento computacional - 01 Ucaldas - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pensamiento Computacional
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Unidad1.html">Unidad 1: Introducción al Pensamiento Computacional</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="Unidad2.html">Unidad 2: Diseño y Evaluación de Algoritmos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/Unidad2_1.html">2.1.1 Lógica de Programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/Colab.html">2.1.2 Introducción a la Programación con Python</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/LogicaySintaxisPython2-2.html">2.1.2 Sintaxis Python</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/213_Estructura_Datos.html">2.1.3 Estructuras de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/EstrucuturaDatos.html">2.1.3.1 Diccionarios</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/22_complejidad.html">2.2 Complejidad Computacional y Eficiencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/23optimizacion.html">2.3 Técnicas de Optimización en Algoritmos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/Taller_Corte1.html">Evaluemos lo aprendido!!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/Certificado_electoral.html">Apoyemos la democracia!!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad2/Certificados_cursos.html">Gracias por realizar el material de apoyo!!</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Unidad 3: Herramientas Computacionales para la Automatización</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Unidad3/unidad31.html">3.1 Programación básica aplicada a la solución de problemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad3/Pandas.html">Guía Completa de Pandas para Análisis de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad3/31Rgrecion.html">Unidad 3.3 — Modelos de Regresión en Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unidad3/c.html">Unidad 3.3 — Modelos de Regresion en Machine Learning</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional/issues/new?title=Issue%20on%20page%20%2FUnidad3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Unidad3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unidad 3: Herramientas Computacionales para la Automatización</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-basica-aplicada-a-la-solucion-de-problemas">3.1 Programación básica aplicada a la solución de problemas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pandas-y-dataframes">A. Pandas y DataFrames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-lectura-y-manipulacion-de-archivos">B. Lectura y Manipulación de Archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-caso-practico-consolidacion-de-multiples-archivos">C. Caso Práctico: Consolidación de Múltiples Archivos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-software-y-herramientas-de-automatizacion">3.2 Uso de software y herramientas de automatización</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-automatizacion-de-flujos-con-power-automate">A. Automatización de flujos con Power Automate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-integracion-avanzada-con-n8n">B. Integración Avanzada con n8n</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-inteligencia-artificial-y-aprendizaje-automatico">3.3 Introducción a la inteligencia artificial y aprendizaje automático</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fundamentos-y-modelos-de-lenguaje">A. Fundamentos y Modelos de Lenguaje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-prompt-engineering-ingenieria-de-instrucciones">B. Prompt Engineering (Ingeniería de Instrucciones)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-creacion-de-agentes-inteligentes">C. Creación de Agentes Inteligentes</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="unidad-3-herramientas-computacionales-para-la-automatizacion">
+<h1>Unidad 3: Herramientas Computacionales para la Automatización<a class="headerlink" href="#unidad-3-herramientas-computacionales-para-la-automatizacion" title="Link to this heading">#</a></h1>
+<p>Esta unidad transiciona de la lógica computacional pura a la aplicación práctica, dotando al estudiante de herramientas tecnológicas modernas para resolver problemas administrativos, automatizar tareas repetitivas y aprovechar el poder de los datos y la inteligencia artificial.</p>
+<hr class="docutils" />
+<section id="programacion-basica-aplicada-a-la-solucion-de-problemas">
+<h2>3.1 Programación básica aplicada a la solución de problemas<a class="headerlink" href="#programacion-basica-aplicada-a-la-solucion-de-problemas" title="Link to this heading">#</a></h2>
+<p>En el entorno laboral actual, uno de los retos más comunes es la manipulación volúmenes de datos distribuidos en múltiples archivos. Para resolver esto, utilizaremos <strong>pandas</strong>, la librería estándar para el análisis y transformación de datos en Python.</p>
+<section id="a-pandas-y-dataframes">
+<h3>A. Pandas y DataFrames<a class="headerlink" href="#a-pandas-y-dataframes" title="Link to this heading">#</a></h3>
+<p>La estructura de datos principal de esta librería es el <strong>DataFrame</strong>, que funciona exactamente como una tabla bidimensional (con filas y columnas), similar a una hoja de cálculo tradicional.</p>
+<img src="_static/images/3-1-dataframe.png" width="600" />
+</section>
+<section id="b-lectura-y-manipulacion-de-archivos">
+<h3>B. Lectura y Manipulación de Archivos<a class="headerlink" href="#b-lectura-y-manipulacion-de-archivos" title="Link to this heading">#</a></h3>
+<p>Pandas permite leer, filtrar y limpiar archivos CSV o Excel con muy pocas líneas de código, evitando horas de trabajo manual.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Leer un archivo de Excel</span>
+<span class="n">df_ventas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;ventas_mensuales.xlsx&quot;</span><span class="p">)</span>
+
+<span class="c1"># Filtrar: Mostrar solo ventas mayores a 1000</span>
+<span class="n">ventas_altas</span> <span class="o">=</span> <span class="n">df_ventas</span><span class="p">[</span><span class="n">df_ventas</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">]</span>
+
+<span class="c1"># Limpieza: Eliminar filas con celdas vacías</span>
+<span class="n">df_limpio</span> <span class="o">=</span> <span class="n">df_ventas</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="c-caso-practico-consolidacion-de-multiples-archivos">
+<h3>C. Caso Práctico: Consolidación de Múltiples Archivos<a class="headerlink" href="#c-caso-practico-consolidacion-de-multiples-archivos" title="Link to this heading">#</a></h3>
+<p>Si la información operativa está dividida en varios archivos de Excel separados, podemos unirlos, pivotarlos y transformarlos en un solo archivo maestro estructurado, ideal para procesos de migración o análisis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># 1. Cargar múltiples archivos de Excel</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;fuente_1.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;fuente_2.xlsx&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Consolidar en un solo DataFrame apilando los datos</span>
+<span class="n">df_consolidado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 3. Exportar el resultado a un nuevo archivo</span>
+<span class="n">df_consolidado</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;Reporte_Maestro.xlsx&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Consolidación finalizada.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="_static/images/3-1-consolidacion.png" width="600" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="uso-de-software-y-herramientas-de-automatizacion">
+<h2>3.2 Uso de software y herramientas de automatización<a class="headerlink" href="#uso-de-software-y-herramientas-de-automatizacion" title="Link to this heading">#</a></h2>
+<p>No siempre es necesario programar desde cero. Las plataformas «Low-Code/No-Code» permiten orquestar procesos complejos conectando diferentes servicios y aplicaciones empresariales.</p>
+<section id="a-automatizacion-de-flujos-con-power-automate">
+<h3>A. Automatización de flujos con Power Automate<a class="headerlink" href="#a-automatizacion-de-flujos-con-power-automate" title="Link to this heading">#</a></h3>
+<p>Power Automate es fundamental para gestionar flujos de trabajo corporativos. Permite crear secuencias automatizadas, como la sincronización y fusión de listas en <strong>SharePoint</strong>, la gestión de aprobaciones de documentos, o la extracción automática de archivos adjuntos desde correos electrónicos hacia carpetas en la nube.</p>
+</section>
+<section id="b-integracion-avanzada-con-n8n">
+<h3>B. Integración Avanzada con n8n<a class="headerlink" href="#b-integracion-avanzada-con-n8n" title="Link to this heading">#</a></h3>
+<p>Para procesos más técnicos que requieren orquestar aplicaciones mediante APIs, <strong>n8n</strong> ofrece un entorno visual avanzado basado en nodos. Permite automatizar la transferencia de datos entre una base de datos local (como PostgreSQL) y un servicio web externo, reaccionando a eventos en tiempo real.</p>
+<img src="_static/images/3-2-automatizacion.png" width="600" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="introduccion-a-la-inteligencia-artificial-y-aprendizaje-automatico">
+<h2>3.3 Introducción a la inteligencia artificial y aprendizaje automático<a class="headerlink" href="#introduccion-a-la-inteligencia-artificial-y-aprendizaje-automatico" title="Link to this heading">#</a></h2>
+<p>La inteligencia artificial (IA) dejó de ser un concepto teórico para convertirse en una herramienta diaria de productividad, análisis y optimización.</p>
+<section id="a-fundamentos-y-modelos-de-lenguaje">
+<h3>A. Fundamentos y Modelos de Lenguaje<a class="headerlink" href="#a-fundamentos-y-modelos-de-lenguaje" title="Link to this heading">#</a></h3>
+<p>Es vital comprender la diferencia entre el Machine Learning tradicional (sistemas que detectan patrones en los datos) y la IA generativa. En la actualidad, interactuamos con Modelos de Lenguaje (como <strong>Gemini</strong>), capaces de razonar sobre documentos, clasificar textos y estructurar información compleja.</p>
+</section>
+<section id="b-prompt-engineering-ingenieria-de-instrucciones">
+<h3>B. Prompt Engineering (Ingeniería de Instrucciones)<a class="headerlink" href="#b-prompt-engineering-ingenieria-de-instrucciones" title="Link to this heading">#</a></h3>
+<p>El éxito al usar estas herramientas radica en el diseño de las instrucciones. Un buen «prompt» debe proporcionar contexto, definir un rol (por ejemplo, «Actúa como un experto en innovación y marketing»), establecer restricciones claras y especificar el formato exacto de salida.</p>
+</section>
+<section id="c-creacion-de-agentes-inteligentes">
+<h3>C. Creación de Agentes Inteligentes<a class="headerlink" href="#c-creacion-de-agentes-inteligentes" title="Link to this heading">#</a></h3>
+<p>El verdadero potencial de la automatización se alcanza al integrar estas tecnologías. Al combinar plataformas de orquestación como n8n con modelos como Gemini, podemos crear <strong>agentes autónomos</strong>. Estos agentes pueden recibir información de un flujo de trabajo, tomar decisiones lógicas basadas en lenguaje natural y ejecutar acciones en otras plataformas sin intervención humana.</p>
+<img src="_static/images/3-3-ia-agentes.png" width="600" /></section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Unidad2/Certificados_cursos.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Gracias por realizar el material de apoyo!!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Unidad3/unidad31.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">3.1 Programación básica aplicada a la solución de problemas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-basica-aplicada-a-la-solucion-de-problemas">3.1 Programación básica aplicada a la solución de problemas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pandas-y-dataframes">A. Pandas y DataFrames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-lectura-y-manipulacion-de-archivos">B. Lectura y Manipulación de Archivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-caso-practico-consolidacion-de-multiples-archivos">C. Caso Práctico: Consolidación de Múltiples Archivos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-software-y-herramientas-de-automatizacion">3.2 Uso de software y herramientas de automatización</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-automatizacion-de-flujos-con-power-automate">A. Automatización de flujos con Power Automate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-integracion-avanzada-con-n8n">B. Integración Avanzada con n8n</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-inteligencia-artificial-y-aprendizaje-automatico">3.3 Introducción a la inteligencia artificial y aprendizaje automático</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fundamentos-y-modelos-de-lenguaje">A. Fundamentos y Modelos de Lenguaje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-prompt-engineering-ingenieria-de-instrucciones">B. Prompt Engineering (Ingeniería de Instrucciones)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-creacion-de-agentes-inteligentes">C. Creación de Agentes Inteligentes</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Sergio Alejandro Holguin García
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
