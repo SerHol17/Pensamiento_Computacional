@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.1 Ingeniería de Instrucciones (Prompting) &#8212; Pensamiento computacional - 01 Ucaldas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Unidad4/41prompt';</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="4.2 Orquestación y Automatización Avanzada con n8n" href="42n8n.html" />
+    <link rel="prev" title="Unidad 4: Automatización" href="../Unidad4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-light" alt="Pensamiento computacional - 01 Ucaldas - Home"/>
+    <script>document.write(`<img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-dark" alt="Pensamiento computacional - 01 Ucaldas - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Búsqueda</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Pensamiento Computacional
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Unidad1.html">Unidad 1: Introducción al Pensamiento Computacional</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Unidad2.html">Unidad 2: Diseño y Evaluación de Algoritmos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/Unidad2_1.html">2.1.1 Lógica de Programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/Colab.html">2.1.2 Introducción a la Programación con Python</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/LogicaySintaxisPython2-2.html">2.1.2 Sintaxis Python</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/213_Estructura_Datos.html">2.1.3 Estructuras de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/EstrucuturaDatos.html">2.1.3.1 Diccionarios</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/22_complejidad.html">2.2 Complejidad Computacional y Eficiencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/23optimizacion.html">2.3 Técnicas de Optimización en Algoritmos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/Taller_Corte1.html">Evaluemos lo aprendido!!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/Certificado_electoral.html">Apoyemos la democracia!!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad2/Certificados_cursos.html">Gracias por realizar el material de apoyo!!</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Unidad3.html">Unidad 3: Herramientas Computacionales para la Automatización</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad3/unidad31.html">3.1 Programación básica aplicada a la solución de problemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad3/Pandas.html">Guía Completa de Pandas para Análisis de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad3/31Rgrecion.html">Unidad 3.3 — Modelos de Regresión en Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad3/c.html">Unidad 3.3 — Modelos de Regresion en Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad3/taller2.html">Evaluemos lo aprendido!!</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Unidad4.html">Unidad 4: Automatización</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1 Ingeniería de Instrucciones (Prompting)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="42n8n.html">4.2 Orquestación y Automatización Avanzada con n8n</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/SerHol17/Pensamiento_Computacional/issues/new?title=Issue%20on%20page%20%2FUnidad4/41prompt.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Unidad4/41prompt.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4.1 Ingeniería de Instrucciones (Prompting)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-rol-role">A. Rol (Role)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-contexto-context">B. Contexto (Context)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-razonamiento-reasoning-chain-of-thought">C. Razonamiento (Reasoning / Chain of Thought)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-instrucciones-instructions-task">D. Instrucciones (Instructions &amp; Task)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-integrador-el-contraste">4.1.2 Ejemplo Integrador: El Contraste</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ingenieria-de-instrucciones-prompting">
+<h1>4.1 Ingeniería de Instrucciones (Prompting)<a class="headerlink" href="#ingenieria-de-instrucciones-prompting" title="Link to this heading">#</a></h1>
+<p>Interactuar con modelos de lenguaje de gran escala (LLMs) como Gemini o GPT no es lo mismo que usar un motor de búsqueda tradicional. La «Ingeniería de Instrucciones» o Prompt Engineering es la habilidad de diseñar textos de entrada estructurados para programar el comportamiento, el tono y la precisión de la inteligencia artificial.</p>
+<p>Para evitar respuestas genéricas, incompletas o con «alucinaciones» (datos inventados), utilizaremos un marco de trabajo profesional basado en cuatro pilares fundamentales: <strong>Rol, Contexto, Razonamiento e Instrucciones</strong>.</p>
+<hr class="docutils" />
+<section id="a-rol-role">
+<h2>A. Rol (Role)<a class="headerlink" href="#a-rol-role" title="Link to this heading">#</a></h2>
+<p>Asignar un rol es el primer paso para «calibrar» el modelo. Al definir quién debe ser la IA, delimitamos el vocabulario que utilizará, el nivel de profundidad técnica de su respuesta y la perspectiva desde la cual abordará el problema.</p>
+<ul class="simple">
+<li><p><strong>Por qué es importante:</strong> Un resumen financiero explicado por un «profesor de primaria» será radicalmente distinto al mismo resumen explicado por un «auditor contable senior».</p></li>
+<li><p><strong>Ejemplo:</strong> <em>«Actúa como un científico de datos experto en análisis de comportamiento del consumidor…»</em> o <em>«Asume el rol de un ingeniero de soporte técnico especializado en bases de datos…»</em></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="b-contexto-context">
+<h2>B. Contexto (Context)<a class="headerlink" href="#b-contexto-context" title="Link to this heading">#</a></h2>
+<p>El modelo de lenguaje tiene conocimiento general del mundo, pero tiene cero conocimiento sobre tu situación específica, tu empresa o tu problema actual. El contexto provee el «terreno de juego» sobre el cual la IA debe trabajar.</p>
+<ul class="simple">
+<li><p><strong>Qué debe incluir:</strong> Antecedentes del problema, datos históricos relevantes, el público objetivo al que va dirigida la respuesta o las limitaciones del proyecto.</p></li>
+<li><p><strong>Ejemplo:</strong> <em>«Nuestra empresa de comercio electrónico ha experimentado una caída del 20% en las ventas de la categoría de tecnología durante el último trimestre. Nuestro público principal son jóvenes universitarios y tenemos un presupuesto de marketing muy limitado.»</em></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="c-razonamiento-reasoning-chain-of-thought">
+<h2>C. Razonamiento (Reasoning / Chain of Thought)<a class="headerlink" href="#c-razonamiento-reasoning-chain-of-thought" title="Link to this heading">#</a></h2>
+<p>Este es el pilar que diferencia un prompt básico de uno avanzado. En lugar de pedirle a la IA que salte directamente a la conclusión, le exigimos que desglose su proceso lógico. Esto reduce drásticamente los errores y permite auditar cómo llegó a su respuesta.</p>
+<ul class="simple">
+<li><p><strong>Técnica clave:</strong> Indicarle explícitamente que «piense paso a paso» o pedirle que analice los pros y los contras antes de emitir un veredicto.</p></li>
+<li><p><strong>Ejemplo:</strong> <em>«Antes de darme tu recomendación final, analiza paso a paso las posibles causas de la caída en ventas mencionada en el contexto. Evalúa primero factores económicos y luego factores de plataforma.»</em></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="d-instrucciones-instructions-task">
+<h2>D. Instrucciones (Instructions &amp; Task)<a class="headerlink" href="#d-instrucciones-instructions-task" title="Link to this heading">#</a></h2>
+<p>Aquí es donde definimos la tarea específica que el modelo debe ejecutar y, fundamentalmente, <strong>el formato exacto de salida</strong>. Una instrucción ambigua genera resultados ambiguos.</p>
+<ul class="simple">
+<li><p><strong>Claridad y Restricciones:</strong> Debes indicar qué quieres, qué NO quieres, y cómo debe verse visualmente la respuesta (una tabla, una lista, código, un archivo JSON).</p></li>
+<li><p><strong>Ejemplo:</strong> <em>«Genera un plan de acción de 3 pasos para recuperar las ventas. No incluyas introducciones ni conclusiones generales. Devuelve el resultado en formato de tabla con las columnas: Acción, Responsable y Tiempo Estimado.»</em></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ejemplo-integrador-el-contraste">
+<h2>4.1.2 Ejemplo Integrador: El Contraste<a class="headerlink" href="#ejemplo-integrador-el-contraste" title="Link to this heading">#</a></h2>
+<p>Veamos la diferencia entre un enfoque inexperto y el uso del framework completo para automatizar una tarea de análisis.</p>
+<p><strong>Prompt Pobre (Ineficiente):</strong></p>
+<blockquote>
+<div><p><em>«Ayúdame a mejorar las ventas de mi tienda que están bajando.»</em>
+<em>(Resultado: La IA dará una lista genérica de 10 consejos de marketing que aplican a cualquier negocio y no resuelven el problema de fondo).</em></p>
+</div></blockquote>
+<p><strong>Prompt Avanzado (Framework Completo):</strong></p>
+<blockquote>
+<div><p><strong>[Rol]:</strong> Actúa como un consultor de estrategia de negocios experto en retención de clientes.
+<strong>[Contexto]:</strong> Administro una plataforma de cursos en línea. Este mes, la tasa de cancelación (churn rate) aumentó del 5% al 12%. Los clientes indican que los cursos son buenos, pero no tienen tiempo para terminarlos.
+<strong>[Razonamiento]:</strong> Primero, analiza paso a paso por qué la falta de tiempo es una barrera en la educación virtual. Luego, piensa en 3 micro-intervenciones que se puedan automatizar desde la plataforma para mantenerlos enganchados.
+<strong>[Instrucciones]:</strong> Redacta un documento estructurado. Utiliza viñetas para tu análisis. Para las 3 micro-intervenciones, entrégame el texto exacto que debería ir en un correo electrónico automático de re-enganche.</p>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Unidad4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Unidad4.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Unidad 4: Automatización</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="42n8n.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">4.2 Orquestación y Automatización Avanzada con n8n</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-rol-role">A. Rol (Role)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-contexto-context">B. Contexto (Context)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-razonamiento-reasoning-chain-of-thought">C. Razonamiento (Reasoning / Chain of Thought)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-instrucciones-instructions-task">D. Instrucciones (Instructions &amp; Task)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-integrador-el-contraste">4.1.2 Ejemplo Integrador: El Contraste</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Sergio Alejandro Holguin García
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
