@@ -23,3 +23,8 @@ chapters:
   - file: Unidad3/Pandas.ipynb
   - file: Unidad3/31Rgrecion.md
   - file: Unidad3/c.ipynb
+  - file: Unidad3/taller2.md
+- file: Unidad4
+  sections:
+  - file: Unidad4/41prompt.md
+  - file: Unidad4/42n8n.md
